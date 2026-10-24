@@ -108,6 +108,9 @@ Tam kurulum şu dosyaları kopyalar:
 - Klassy'yi pencere dekorasyonu ve uygulama stili yapar, animasyon çarpanını
   0.5'e ayarlar, `kwinrc` içinde bulanıklık, kontrast, solma ve ölçek
   efektlerini açar (titreyen pencereler ve sihirli lamba kapalı);
+- `kwinrulesrc`'ye "Iris title bar" pencere kuralını ekler; böylece etkin
+  olmayan pencerelerin başlığı şemadaki gri zemini (`#1C1C1C`) alır, yazı rengi
+  değişmez (Plasma şemayı `kdeglobals`'a kopyalarken bu renkleri atıyor);
 - `dolphinrc`, `kdenliverc`, `konsolerc`, `katerc` ve `okularrc` içindeki
   Breeze renk şeması geçersiz kılmalarını siler;
 - GTK animasyonlarını açar ve `~/.config/rofi/config.rasi` varsa rofi temasını seçer;
@@ -175,6 +178,8 @@ Ardından **Sistem Ayarları → Pencere Yönetimi → KWin Betikleri** içinde
    - `~/.config/rofi/config.rasi` içindeki `@theme "themes/iris"` satırını silin.
    - Kurulumun yazdığı KWin efekt ayarları `~/.config/kwinrc` içinde kalır;
      **Sistem Ayarları → Pencere Yönetimi → Masaüstü Efektleri**'nden değiştirin.
+   - **Sistem Ayarları → Pencere Yönetimi → Pencere Kuralları**'ndan
+     **Iris title bar** kuralını silin.
 
 ## Bilinen sınırlar
 

@@ -107,6 +107,9 @@ and, unless `--no-apply` is given, then:
 - sets Klassy as window decoration and application style, the animation
   factor to 0.5, and enables the blur, contrast, fade and scale effects
   (wobbly windows and magic lamp off) in `kwinrc`;
+- adds an "Iris title bar" window rule to `kwinrulesrc` so that inactive title
+  bars get the scheme's grey (`#1C1C1C`) with unchanged text (Plasma drops
+  those colours when it copies the scheme into `kdeglobals`);
 - removes Breeze colour scheme overrides from `dolphinrc`, `kdenliverc`,
   `konsolerc`, `katerc` and `okularrc`;
 - enables GTK animations and selects the rofi theme if `~/.config/rofi/config.rasi` exists;
@@ -172,6 +175,8 @@ Then enable **Iris Popup Anchor** in **System Settings → Window Management →
    - remove the `@theme "themes/iris"` line from `~/.config/rofi/config.rasi`.
    - the KWin effect settings written by the installer stay in `~/.config/kwinrc`;
      change them in **System Settings → Window Management → Desktop Effects**.
+   - delete the **Iris title bar** rule in **System Settings → Window
+     Management → Window Rules**.
 
 ## Known limitations
 

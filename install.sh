@@ -111,6 +111,31 @@ kwriteconfig6 --file kwinrc --group Effect-kwin4_effect_scale --key Duration "14
 kwriteconfig6 --file kwinrc --group Effect-kwin4_effect_fade --key FadeInTime "120"
 kwriteconfig6 --file kwinrc --group Effect-kwin4_effect_fade --key FadeOutTime "90"
 
+say "window rule: title bar colours"
+# Inactive title bars are grey (#1C1C1C) with the same text colour as active
+# ones. Plasma rebuilds [Colors:Header][Inactive] from [Colors:Window] when it
+# writes kdeglobals, so KWin only sees those colours when it reads the scheme
+# file itself, which is what this rule makes it do for every window.
+RULE=iris-titlebar
+kwriteconfig6 --file kwinrulesrc --group "$RULE" --key Description "Iris title bar"
+kwriteconfig6 --file kwinrulesrc --group "$RULE" --key decocolor "Iris"
+kwriteconfig6 --file kwinrulesrc --group "$RULE" --key decocolorrule 2
+rules=$(kreadconfig6 --file kwinrulesrc --group General --key rules)
+order=$(kreadconfig6 --file kwinrulesrc --group General --key Order)
+if [ -n "$rules" ]; then
+  # Plasma 6.7 layout: only the groups listed in "rules" are loaded.
+  case ",$rules," in *",$RULE,"*) ;; *) rules="$rules,$RULE" ;; esac
+  kwriteconfig6 --file kwinrulesrc --group General --key rules "$rules"
+  kwriteconfig6 --file kwinrulesrc --group General --key count "$(tr ',' '\n' <<<"$rules" | grep -c .)"
+elif [ -n "$order" ] || kwin_wayland --version 2>/dev/null | grep -qE ' 6\.([89]|[1-9][0-9])'; then
+  # Plasma 6.8 and later load every group; "Order" only sorts them.
+  case ",$order," in *",$RULE,"*) ;; *) order="${order:+$order,}$RULE" ;; esac
+  kwriteconfig6 --file kwinrulesrc --group General --key Order "$order"
+else
+  kwriteconfig6 --file kwinrulesrc --group General --key rules "$RULE"
+  kwriteconfig6 --file kwinrulesrc --group General --key count 1
+fi
+
 say "removing per-application colour scheme overrides"
 for f in dolphinrc kdenliverc konsolerc katerc okularrc; do
   [ -f ~/.config/"$f" ] || continue

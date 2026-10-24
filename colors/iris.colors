@@ -63,7 +63,7 @@ ForegroundVisited=150,150,150
 
 [Colors:Header][Inactive]
 BackgroundAlternate=10,10,10
-BackgroundNormal=0,0,0
+BackgroundNormal=28,28,28
 DecorationFocus=255,255,255
 DecorationHover=61,61,61
 ForegroundActive=255,255,255
@@ -71,7 +71,7 @@ ForegroundInactive=110,110,110
 ForegroundLink=255,255,255
 ForegroundNegative=255,85,85
 ForegroundNeutral=245,180,60
-ForegroundNormal=180,180,180
+ForegroundNormal=255,255,255
 ForegroundPositive=80,214,140
 ForegroundVisited=150,150,150
 
@@ -144,6 +144,6 @@ contrast=4
 activeBackground=0,0,0
 activeBlend=61,61,61
 activeForeground=255,255,255
-inactiveBackground=0,0,0
+inactiveBackground=28,28,28
 inactiveBlend=38,38,38
-inactiveForeground=110,110,110
+inactiveForeground=255,255,255

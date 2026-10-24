@@ -23,6 +23,10 @@ decoration, wallpaper) uses these values.
 
 The accent colour is **white**. Colour is only used where it carries meaning.
 
+Title bars: the active window's is `bg0`, an inactive window's is `#1C1C1C`
+(28,28,28). The text stays `fg0` on both; focus is shown by the background,
+not by dimming the title.
+
 ## Control surfaces
 
 On pure black, controls need their own tones or they blend into the window:
