@@ -1,0 +1,858 @@
+diff -ruN a/contents/ui/CalendarView.qml b/contents/ui/CalendarView.qml
+--- a/contents/ui/CalendarView.qml
++++ b/contents/ui/CalendarView.qml
+@@ -145,7 +145,7 @@
+ 
+                         level: 2
+ 
+-                        text: i18n("Events")
++                        text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Events")
+                         textFormat: Text.PlainText
+                         maximumLineCount: 1
+                         elide: Text.ElideRight
+@@ -154,11 +154,11 @@
+                         id: addEventButton
+ 
+                         visible: agenda.visible && ApplicationIntegration.calendarInstalled
+-                        text: i18nc("@action:button Add event", "Add…")
++                        text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@action:button Add event", "Add…")
+                         Layout.rightMargin: Kirigami.Units.smallSpacing
+                         icon.name: "list-add"
+ 
+-                        Accessible.description: i18nc("@info:tooltip", "Add a new event")
++                        Accessible.description: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@info:tooltip", "Add a new event")
+                         KeyNavigation.down: KeyNavigation.tab
+                         KeyNavigation.right: monthView.viewHeader.tabBar
+ 
+@@ -384,8 +384,8 @@
+ 
+                 iconName: "checkmark"
+                 text: monthView.isToday(monthView.currentDate)
+-                    ? i18n("No events for today")
+-                    : i18n("No events for this day");
++                    ? i18nd("plasma_applet_org.kde.plasma.digitalclock", "No events for today")
++                    : i18nd("plasma_applet_org.kde.plasma.digitalclock", "No events for this day");
+             }
+         }
+ 
+@@ -424,7 +424,7 @@
+ 
+                     level: 2
+ 
+-                    text: i18n("Time Zones")
++                    text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Time Zones")
+                     textFormat: Text.PlainText
+                     maximumLineCount: 1
+                     elide: Text.ElideRight
+@@ -435,11 +435,11 @@
+                     id: switchTimeZoneButton
+ 
+                     visible: KConfig.KAuthorized.authorizeControlModule("kcm_clock.desktop")
+-                    text: i18n("Switch…")
++                    text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Switch…")
+                     icon.name: "preferences-system-time"
+ 
+-                    Accessible.name: i18n("Switch to another time zone")
+-                    Accessible.description: i18n("Switch to another time zone")
++                    Accessible.name: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Switch to another time zone")
++                    Accessible.description: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Switch to another time zone")
+ 
+                     KeyNavigation.down: clocksList
+                     Keys.onRightPressed: event => {
+diff -ruN a/contents/ui/configAppearance.qml b/contents/ui/configAppearance.qml
+--- a/contents/ui/configAppearance.qml
++++ b/contents/ui/configAppearance.qml
+@@ -55,12 +55,12 @@
+     Kirigami.FormLayout {
+ 
+         RowLayout {
+-            Kirigami.FormData.label: i18n("Information:")
++            Kirigami.FormData.label: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Information:")
+             spacing: Kirigami.Units.smallSpacing
+ 
+             QQC2.CheckBox {
+                 id: showDate
+-                text: i18n("Show date")
++                text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Show date")
+             }
+ 
+             QQC2.ComboBox {
+@@ -69,9 +69,9 @@
+                 visible: Plasmoid.formFactor !== PlasmaCore.Types.Vertical
+                 Layout.preferredWidth: appearancePage.comboBoxWidth
+                 model: [
+-                    i18n("Adaptive location"),
+-                    i18n("Always beside time"),
+-                    i18n("Always below time"),
++                    i18nd("plasma_applet_org.kde.plasma.digitalclock", "Adaptive location"),
++                    i18nd("plasma_applet_org.kde.plasma.digitalclock", "Always beside time"),
++                    i18nd("plasma_applet_org.kde.plasma.digitalclock", "Always below time"),
+                 ]
+                 onActivated: appearancePage.cfg_dateDisplayFormat = currentIndex
+             }
+@@ -84,11 +84,11 @@
+         QQC2.ComboBox {
+             id: showSecondsComboBox
+             Layout.preferredWidth: appearancePage.comboBoxWidth
+-            Kirigami.FormData.label: i18n("Show seconds:")
++            Kirigami.FormData.label: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Show seconds:")
+             model: [
+-                i18nc("@option:check", "Never"),
+-                i18nc("@option:check", "Only in the tooltip"),
+-                i18n("Always"),
++                i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@option:check", "Never"),
++                i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@option:check", "Only in the tooltip"),
++                i18nd("plasma_applet_org.kde.plasma.digitalclock", "Always"),
+             ]
+             onActivated: appearancePage.cfg_showSeconds = currentIndex;
+         }
+@@ -98,18 +98,18 @@
+         }
+ 
+         ColumnLayout {
+-            Kirigami.FormData.label: i18n("Show time zone:")
++            Kirigami.FormData.label: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Show time zone:")
+             Kirigami.FormData.buddyFor: showLocalTimeZoneWhenDifferent
+             spacing: Kirigami.Units.smallSpacing
+ 
+             QQC2.RadioButton {
+                 id: showLocalTimeZoneWhenDifferent
+-                text: i18n("Only when different from local time zone")
++                text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Only when different from local time zone")
+             }
+ 
+             QQC2.RadioButton {
+                 id: showLocalTimeZone
+-                text: i18n("Always")
++                text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Always")
+             }
+         }
+ 
+@@ -118,7 +118,7 @@
+         }
+ 
+         RowLayout {
+-            Kirigami.FormData.label: i18n("Display time zone as:")
++            Kirigami.FormData.label: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Display time zone as:")
+             Kirigami.FormData.buddyFor: displayTimeZoneFormat
+             Layout.fillWidth: true
+             spacing: Kirigami.Units.smallSpacing
+@@ -128,9 +128,9 @@
+ 
+                 Layout.preferredWidth: appearancePage.comboBoxWidth
+                 model: [
+-                    i18n("Code"),
+-                    i18n("City"),
+-                    i18n("Offset from UTC time"),
++                    i18nd("plasma_applet_org.kde.plasma.digitalclock", "Code"),
++                    i18nd("plasma_applet_org.kde.plasma.digitalclock", "City"),
++                    i18nd("plasma_applet_org.kde.plasma.digitalclock", "Offset from UTC time"),
+                 ]
+                 onActivated: appearancePage.cfg_displayTimezoneFormat = currentIndex
+             }
+@@ -138,7 +138,7 @@
+                 id: switchTimeZoneButton
+                 Layout.preferredWidth: Math.max(changeRegionalSettingsButton.implicitWidth, switchTimeZoneButton.implicitWidth)
+                 visible: KConfig.KAuthorized.authorizeControlModule("kcm_clock")
+-                text: i18nc("@action:button opens kcm", "Switch Time Zone…")
++                text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@action:button opens kcm", "Switch Time Zone…")
+                 icon.name: "preferences-system-time"
+                 onClicked: KCMUtils.KCMLauncher.openSystemSettings("kcm_clock")
+             }
+@@ -150,16 +150,16 @@
+ 
+         RowLayout {
+             Layout.fillWidth: true
+-            Kirigami.FormData.label: i18nc("@label:listbox", "Time display:")
++            Kirigami.FormData.label: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@label:listbox", "Time display:")
+             spacing: Kirigami.Units.smallSpacing
+ 
+             QQC2.ComboBox {
+                 id: use24hFormat
+                 Layout.preferredWidth: appearancePage.comboBoxWidth
+                 model: [
+-                    i18nc("@item:inlistbox time display option", "12-Hour"),
+-                    i18nc("@item:inlistbox time display option", "Use region defaults"),
+-                    i18nc("@item:inlistbox time display option", "24-Hour")
++                    i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@item:inlistbox time display option", "12-Hour"),
++                    i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@item:inlistbox time display option", "Use region defaults"),
++                    i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@item:inlistbox time display option", "24-Hour")
+                 ]
+                 onActivated: appearancePage.cfg_use24hFormat = currentIndex
+             }
+@@ -168,7 +168,7 @@
+                 id: changeRegionalSettingsButton
+                 visible: KConfig.KAuthorized.authorizeControlModule("kcm_regionandlang")
+                 Layout.preferredWidth: Math.max(changeRegionalSettingsButton.implicitWidth, switchTimeZoneButton.implicitWidth)
+-                text: i18nc("@action:button opens kcm", "Change Regional Settings…")
++                text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@action:button opens kcm", "Change Regional Settings…")
+                 icon.name: "preferences-desktop-locale"
+                 onClicked: KCMUtils.KCMLauncher.openSystemSettings("kcm_regionandlang")
+             }
+@@ -179,7 +179,7 @@
+         }
+ 
+         RowLayout {
+-            Kirigami.FormData.label: i18nc("@label:listbox", "Date format:")
++            Kirigami.FormData.label: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@label:listbox", "Date format:")
+             enabled: showDate.checked
+             spacing: Kirigami.Units.smallSpacing
+ 
+@@ -189,28 +189,28 @@
+                 textRole: "label"
+                 model: [
+                     {
+-                        label: i18nc("@item:inlistbox date display option, includes e.g. day of week and month as word", "Long date"),
++                        label: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@item:inlistbox date display option, includes e.g. day of week and month as word", "Long date"),
+                         name: "longDate",
+                         formatter(d) {
+                             return Qt.formatDate(d, Qt.locale(), Locale.LongFormat);
+                         },
+                     },
+                     {
+-                        label: i18nc("@item:inlistbox date display option, e.g. all numeric", "Short date"),
++                        label: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@item:inlistbox date display option, e.g. all numeric", "Short date"),
+                         name: "shortDate",
+                         formatter(d) {
+                             return Qt.formatDate(d, Qt.locale(), Locale.ShortFormat);
+                         },
+                     },
+                     {
+-                        label: i18nc("@item:inlistbox date display option, yyyy-mm-dd", "ISO date"),
++                        label: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@item:inlistbox date display option, yyyy-mm-dd", "ISO date"),
+                         name: "isoDate",
+                         formatter(d) {
+                             return Qt.formatDate(d, Qt.ISODate);
+                         },
+                     },
+                     {
+-                        label: i18nc("@item:inlistbox custom date format", "Custom"),
++                        label: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@item:inlistbox custom date format", "Custom"),
+                         name: "custom",
+                         formatter(d) {
+                             return Qt.locale().toString(d, customDateFormat.text);
+@@ -250,7 +250,7 @@
+         }
+ 
+         QQC2.Label {
+-            text: i18n("<a href=\"https://doc.qt.io/qt-6/qml-qtqml-qt.html#formatDateTime-method\">Time Format Documentation</a>")
++            text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "<a href=\"https://doc.qt.io/qt-6/qml-qtqml-qt.html#formatDateTime-method\">Time Format Documentation</a>")
+             enabled: showDate.checked
+             visible: appearancePage.cfg_dateFormat === "custom"
+             wrapMode: Text.Wrap
+@@ -276,16 +276,16 @@
+ 
+         ColumnLayout {
+             spacing: Kirigami.Units.smallSpacing
+-            Kirigami.FormData.label: i18nc("@label:group", "Text display:")
++            Kirigami.FormData.label: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@label:group", "Text display:")
+             Kirigami.FormData.buddyFor: autoFontAndSizeRadioButton
+ 
+             QQC2.RadioButton {
+                 id: autoFontAndSizeRadioButton
+-                text: i18nc("@option:radio", "Automatic")
++                text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@option:radio", "Automatic")
+             }
+ 
+             QQC2.Label {
+-                text: i18nc("@label", "Text will follow the system font and expand to fill the available space.")
++                text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@label", "Text will follow the system font and expand to fill the available space.")
+                 Layout.leftMargin: autoFontAndSizeRadioButton.indicator.width + autoFontAndSizeRadioButton.spacing
+                 textFormat: Text.PlainText
+                 Layout.fillWidth: true
+@@ -299,7 +299,7 @@
+ 
+             QQC2.RadioButton {
+                 id: manualFontAndSizeRadioButton
+-                text: i18nc("@option:radio setting for manually configuring the font settings", "Manual")
++                text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@option:radio setting for manually configuring the font settings", "Manual")
+                 checked: !appearancePage.cfg_autoFontAndSize
+                 onClicked: {
+                     if (appearancePage.cfg_fontFamily === "") {
+@@ -309,7 +309,7 @@
+             }
+ 
+             QQC2.Button {
+-                text: i18nc("@action:button", "Choose Style…")
++                text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@action:button", "Choose Style…")
+                 icon.name: "settings-configure"
+                 enabled: manualFontAndSizeRadioButton.checked
+                 onClicked: {
+@@ -326,14 +326,14 @@
+             QQC2.Label {
+                 visible: manualFontAndSizeRadioButton.checked
+                 Layout.leftMargin: manualFontAndSizeRadioButton.indicator.width + manualFontAndSizeRadioButton.spacing
+-                text: i18nc("@info %1 is the font size, %2 is the font family", "%1pt %2", cfg_fontSize, fontDialog.fontChosen.family)
++                text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@info %1 is the font size, %2 is the font family", "%1pt %2", cfg_fontSize, fontDialog.fontChosen.family)
+                 textFormat: Text.PlainText
+                 font: fontDialog.fontChosen
+             }
+             QQC2.Label {
+                 visible: manualFontAndSizeRadioButton.checked
+                 Layout.leftMargin: manualFontAndSizeRadioButton.indicator.width + manualFontAndSizeRadioButton.spacing
+-                text: i18nc("@info", "Note: size may be reduced if the panel is not thick enough.")
++                text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@info", "Note: size may be reduced if the panel is not thick enough.")
+                 textFormat: Text.PlainText
+                 font: Kirigami.Theme.smallFont
+             }
+@@ -347,7 +347,7 @@
+     // We override the default dialog with our own in plasma-integration
+     Platform.FontDialog {
+         id: fontDialog
+-        title: i18nc("@title:window", "Choose a Font")
++        title: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@title:window", "Choose a Font")
+         modality: Qt.WindowModal
+         parentWindow: appearancePage.Window.window
+ 
+diff -ruN a/contents/ui/configCalendar.qml b/contents/ui/configCalendar.qml
+--- a/contents/ui/configCalendar.qml
++++ b/contents/ui/configCalendar.qml
+@@ -47,21 +47,21 @@
+ 
+         QQC2.CheckBox {
+             id: showWeekNumbers
+-            Kirigami.FormData.label: i18nc("@option:check formdata label", "General:")
+-            text: i18nc("@option:check", "Show week numbers")
++            Kirigami.FormData.label: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@option:check formdata label", "General:")
++            text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@option:check", "Show week numbers")
+         }
+ 
+ 
+         QQC2.ComboBox {
+             id: firstDayOfWeekCombo
+ 
+-            Kirigami.FormData.label: i18nc("@label:listbox", "First day of week:")
++            Kirigami.FormData.label: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@label:listbox", "First day of week:")
+             Layout.fillWidth: true
+ 
+             textRole: "text"
+             model: [-1, 0, 1, 5, 6].map(day => ({
+                 day,
+-                text: day === -1 ? i18nc("@item:inlistbox first day of week option", "Use region defaults") : Qt.locale().dayName(day),
++                text: day === -1 ? i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@item:inlistbox first day of week option", "Use region defaults") : Qt.locale().dayName(day),
+             }))
+             onActivated: index => {
+                 cfg_firstDayOfWeek = model[index].day;
+@@ -79,7 +79,7 @@
+         activeFocusOnTab: true
+         model: eventPluginsManager.model
+         header: Kirigami.InlineViewHeader {
+-                text: i18nc("@title:column", "Available Add-Ons")
++                text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@title:column", "Available Add-Ons")
+                 width: pluginListView.width
+         }
+         headerPositioning: ListView.OverlayHeader
+diff -ruN a/contents/ui/config.qml b/contents/ui/config.qml
+--- a/contents/ui/config.qml
++++ b/contents/ui/config.qml
+@@ -17,17 +17,17 @@
+     id: configModel
+ 
+     ConfigCategory {
+-         name: i18n("Appearance")
++         name: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Appearance")
+          icon: "preferences-desktop-color"
+          source: "configAppearance.qml"
+     }
+     ConfigCategory {
+-        name: i18n("Calendar")
++        name: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Calendar")
+         icon: "office-calendar"
+         source: "configCalendar.qml"
+     }
+     ConfigCategory {
+-        name: i18n("Time Zones")
++        name: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Time Zones")
+         icon: "preferences-system-time"
+         source: "configTimeZones.qml"
+     }
+diff -ruN a/contents/ui/configTimeZones.qml b/contents/ui/configTimeZones.qml
+--- a/contents/ui/configTimeZones.qml
++++ b/contents/ui/configTimeZones.qml
+@@ -67,14 +67,14 @@
+             }
+         }
+         QQC2.Button {
+-            text: i18n("Cancel")
++            text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Cancel")
+             onClicked: {
+                 timeZonesRow.currentIndex = 0
+                 timeZoneSelector.selectedTimeZone = ""
+             }
+         }
+         QQC2.Button {
+-            text: i18n("Add Selected Time Zone")
++            text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Add Selected Time Zone")
+             icon.name: "list-add"
+             enabled: timeZoneSelector.selectedTimeZone
+             onClicked: {
+@@ -91,7 +91,7 @@
+ 
+         actions: [
+             Kirigami.Action {
+-                text: i18n("Add Time Zone…")
++                text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Add Time Zone…")
+                 icon.name: "list-add-symbolic"
+                 Accessible.name: text // https://bugreports.qt.io/browse/QTBUG-130360
+                 onTriggered: {
+@@ -150,9 +150,9 @@
+                 subtitle: {
+                     if (configuredTimeZoneList.count > 1) {
+                         if (isCurrent) {
+-                            return i18n("Clock is currently using this time zone");
++                            return i18nd("plasma_applet_org.kde.plasma.digitalclock", "Clock is currently using this time zone");
+                         } else if (isIdenticalToLocal) {
+-                            return i18nc("@label This list item shows a time zone city name that is identical to the local time zone's city, and will be hidden in the time zone display in the plasmoid's popup", "Hidden while this is the local time zone's city");
++                            return i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@label This list item shows a time zone city name that is identical to the local time zone's city, and will be hidden in the time zone display in the plasmoid's popup", "Hidden while this is the local time zone's city");
+                         }
+                     }
+                     return "";
+@@ -182,7 +182,7 @@
+ 
+                     QQC2.Button {
+                         visible: timeZoneListItem.model.isLocalTimeZone && KConfig.KAuthorized.authorizeControlModule("kcm_clock.desktop")
+-                        text: i18n("Switch Systemwide Time Zone…")
++                        text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Switch Systemwide Time Zone…")
+                         icon.name: "preferences-system-time"
+                         font.bold: false
+                         onClicked: KCMUtils.KCMLauncher.openSystemSettings("kcm_clock")
+@@ -194,7 +194,7 @@
+                         font.bold: false
+                         onClicked: timeZoneListItem.model.checked = false;
+                         QQC2.ToolTip {
+-                            text: i18n("Remove this time zone")
++                            text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Remove this time zone")
+                         }
+                     }
+                 }
+@@ -206,7 +206,7 @@
+                     required property string section
+ 
+                     width: configuredTimeZoneList.width
+-                    text: section === "true" ? i18n("Systemwide Time Zone") : i18n("Additional Time Zones")
++                    text: section === "true" ? i18nd("plasma_applet_org.kde.plasma.digitalclock", "Systemwide Time Zone") : i18nd("plasma_applet_org.kde.plasma.digitalclock", "Additional Time Zones")
+                 }
+             }
+ 
+@@ -219,7 +219,7 @@
+                     leftMargin: Kirigami.Units.largeSpacing * 6
+                     rightMargin: Kirigami.Units.largeSpacing * 6
+                 }
+-                text: i18n("Add more time zones to display all of them in the applet's pop-up, or use one of them for the clock itself")
++                text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Add more time zones to display all of them in the applet's pop-up, or use one of them for the clock itself")
+             }
+         }
+ 
+@@ -232,7 +232,7 @@
+                 Layout.fillWidth: true
+                 leftPadding: Application.layoutDirection === Qt.LeftToRight ? enableWheelCheckBox.spacing : Kirigami.Units.largeSpacing * 2
+                 rightPadding: Application.layoutDirection === Qt.LeftToRight ? Kirigami.Units.largeSpacing * 2 : enableWheelCheckBox.spacing
+-                text: i18nc("@info:usagetip shown below listview", "Tip: Add your home time zone to this list to see the time there even when you're traveling. It will not be shown twice while at home.")
++                text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@info:usagetip shown below listview", "Tip: Add your home time zone to this list to see the time there even when you're traveling. It will not be shown twice while at home.")
+                 font: Kirigami.Theme.smallFont
+                 textFormat: Text.PlainText
+                 wrapMode: Text.Wrap
+@@ -242,7 +242,7 @@
+                 enabled: configuredTimeZoneList.count > 1
+                 Layout.fillWidth: true
+                 Layout.topMargin: Kirigami.Units.largeSpacing
+-                text: i18n("Switch displayed time zone by scrolling over clock applet")
++                text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Switch displayed time zone by scrolling over clock applet")
+             }
+ 
+             QQC2.Label {
+@@ -251,7 +251,7 @@
+                 Layout.fillWidth: true
+                 Layout.leftMargin: enableWheelCheckBox.indicator.width + enableWheelCheckBox.spacing
+                 Layout.rightMargin: Kirigami.Units.largeSpacing * 2
+-                text: i18n("Using this feature does not change the systemwide time zone. When you travel, switch the systemwide time zone instead.")
++                text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Using this feature does not change the systemwide time zone. When you travel, switch the systemwide time zone instead.")
+                 textFormat: Text.PlainText
+                 font: Kirigami.Theme.smallFont
+                 wrapMode: Text.Wrap
+@@ -261,7 +261,7 @@
+ 
+     property Item addTimeZonePage: Kirigami.Page {
+         padding: 0
+-        title: i18n("Choose Time Zone")
++        title: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Choose Time Zone")
+ 
+         Layout.fillHeight: true
+         Layout.fillWidth: true
+diff -ruN a/contents/ui/DigitalClock.qml b/contents/ui/DigitalClock.qml
+--- a/contents/ui/DigitalClock.qml
++++ b/contents/ui/DigitalClock.qml
+@@ -431,7 +431,7 @@
+                 }
+                 minimumPixelSize: 1
+ 
+-                text: Qt.locale().toString(clock.dateTime, Plasmoid.configuration.showSeconds === 2 ? main.timeFormatWithSeconds : main.timeFormat)
++                text: main.latinAmPm(Qt.locale().toString(clock.dateTime, Plasmoid.configuration.showSeconds === 2 ? main.timeFormatWithSeconds : main.timeFormat))
+                 textFormat: Text.PlainText
+ 
+                 verticalAlignment: Text.AlignVCenter
+@@ -518,6 +518,14 @@
+     //
+     // What happens here is that it looks for the delimiter between "h" and "m", takes it
+     // and appends it after "mm" and then appends "ss" for the seconds.
++    // Iris: in 12-hour format always print AM/PM in Latin script, whatever the
++    // locale. Qt takes "AP" from LC_TIME's CLDR data (e.g. tr_TR: ÖÖ/ÖS) and
++    // there is no separate setting for it, so the output is translated here.
++    function latinAmPm(text: string): string {
++        const locale = Qt.locale();
++        return text.replace(locale.amText, "AM").replace(locale.pmText, "PM");
++    }
++
+     function timeFormatCorrection(timeFormatString = Qt.locale().timeFormat(Locale.ShortFormat)) {
+         const regexp = /(hh*)(.+)(mm)/i
+         const match = regexp.exec(timeFormatString);
+@@ -594,10 +602,10 @@
+         const format = (Plasmoid.configuration.showSeconds === 2 ? main.timeFormatWithSeconds : main.timeFormat).replace(/(h+|m+|s+)/g, "" + maximumWidthNumber + maximumWidthNumber); // make sure maximumWidthNumber is formatted as string
+         // build the time string twice, once with an AM time and once with a PM time
+         const date = new Date(2000, 0, 1, 1, 0, 0);
+-        const timeAm = Qt.formatTime(date, format);
++        const timeAm = main.latinAmPm(Qt.formatTime(date, format));
+         const advanceWidthAm = timeMetrics.advanceWidth(timeAm);
+         date.setHours(13);
+-        const timePm = Qt.formatTime(date, format);
++        const timePm = main.latinAmPm(Qt.formatTime(date, format));
+         const advanceWidthPm = timeMetrics.advanceWidth(timePm);
+         // set the sizehelper's text to the widest time string
+         if (advanceWidthAm > advanceWidthPm) {
+diff -ruN a/contents/ui/main.qml b/contents/ui/main.qml
+--- a/contents/ui/main.qml
++++ b/contents/ui/main.qml
+@@ -55,9 +55,9 @@
+ 
+         let formattedTime;
+         if (showSeconds) {
+-            formattedTime = Qt.locale().toString(dateTime, compactRepresentationItem.item.timeFormatWithSeconds);
++            formattedTime = compactRepresentationItem.item.latinAmPm(Qt.locale().toString(dateTime, compactRepresentationItem.item.timeFormatWithSeconds));
+         } else {
+-            formattedTime = Qt.locale().toString(dateTime, compactRepresentationItem.item.timeFormat);
++            formattedTime = compactRepresentationItem.item.latinAmPm(Qt.locale().toString(dateTime, compactRepresentationItem.item.timeFormat));
+         }
+ 
+         if (dateTime.getDay() !== currentClock.dateTime.getDay()) {
+@@ -80,15 +80,15 @@
+ 
+         if (offset > 0) {
+             if (minuteOffset === 0) {
+-                return i18ncp("@info offset from current time", " • %1 hour later", " • %1 hours later", hourOffset);
++                return i18ndcp("plasma_applet_org.kde.plasma.digitalclock", "@info offset from current time", " • %1 hour later", " • %1 hours later", hourOffset);
+             } else {
+-                return i18nc("@info offset from current time in hours and minutes", " • %1:%2 later", hourOffset, minuteOffset);
++                return i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@info offset from current time in hours and minutes", " • %1:%2 later", hourOffset, minuteOffset);
+             }
+         } else {
+             if (minuteOffset === 0) {
+-                return i18ncp("@info offset from current time", " • %1 hour earlier", " • %1 hours earlier", hourOffset);
++                return i18ndcp("plasma_applet_org.kde.plasma.digitalclock", "@info offset from current time", " • %1 hour earlier", " • %1 hours earlier", hourOffset);
+             } else {
+-                return i18nc("@info offset from current time in hours and minutes", " • %1:%2 earlier", hourOffset, minuteOffset);
++                return i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@info offset from current time in hours and minutes", " • %1:%2 earlier", hourOffset, minuteOffset);
+             }
+         }
+     }
+@@ -183,7 +183,7 @@
+     Plasmoid.contextualActions: [
+         PlasmaCore.Action {
+             id: clipboardAction
+-            text: i18n("Copy to Clipboard")
++            text: i18nd("plasma_applet_org.kde.plasma.digitalclock", "Copy to Clipboard")
+             icon.name: "edit-copy"
+         }
+     ]
+diff -ruN a/contents/ui/NoTimezoneWarning.qml b/contents/ui/NoTimezoneWarning.qml
+--- a/contents/ui/NoTimezoneWarning.qml
++++ b/contents/ui/NoTimezoneWarning.qml
+@@ -34,7 +34,7 @@
+         }
+ 
+         PlasmaComponents.Label {
+-            text: i18nc("@label Shown in place of digital clock when no timezone is set", "Time zone is not set; click here to open Date & Time settings and set one")
++            text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@label Shown in place of digital clock when no timezone is set", "Time zone is not set; click here to open Date & Time settings and set one")
+             visible: Plasmoid.formFactor == PlasmaCore.Types.Horizontal
+             textFormat: Text.PlainText
+         }
+diff -ruN a/contents/ui/Tooltip.qml b/contents/ui/Tooltip.qml
+--- a/contents/ui/Tooltip.qml
++++ b/contents/ui/Tooltip.qml
+@@ -34,7 +34,7 @@
+      * These accessible properties are used in the compact representation,
+      * not here.
+      */
+-    Accessible.name: i18nc("@info:tooltip %1 is a localized long date", "Today is %1", tooltipSubtext.text)
++    Accessible.name: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@info:tooltip %1 is a localized long date", "Today is %1", tooltipSubtext.text)
+     Accessible.description: {
+         const description = tooltipSubLabelText.visible ? [tooltipSubLabelText.text] : [];
+         for (let i = 0; i < timeZoneRepeater.count; i += 2) {
+@@ -72,7 +72,7 @@
+                 return text.charAt(0).toUpperCase() + text.slice(1);
+             }
+             property bool anyTimezoneSet: !!mainText
+-            text: anyTimezoneSet ? mainText : i18nc("@label main text shown in digital clock's tooltip when timezone is missing", "Time zone is not set")
++            text: anyTimezoneSet ? mainText : i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@label main text shown in digital clock's tooltip when timezone is missing", "Time zone is not set")
+             textFormat: Text.PlainText
+             wrapMode: Text.Wrap
+         }
+@@ -93,7 +93,7 @@
+                         .arg(Qt.formatDate(clock.dateTime, Qt.locale(), root.dateFormatString))
+                 }
+             }
+-            text: tooltipMaintext.anyTimezoneSet ? subText : i18nc("@label sub text shown in digital clock's tooltip when timezone is missing", "Click the clock icon to open Date & Time settings and set a time zone.")
++            text: tooltipMaintext.anyTimezoneSet ? subText : i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@label sub text shown in digital clock's tooltip when timezone is missing", "Click the clock icon to open Date & Time settings and set a time zone.")
+             opacity: 0.75
+             visible: !clocks.visible
+             font.features: { "tnum": 1 }
+@@ -148,7 +148,7 @@
+                     // Layout.fillWidth is buggy here
+                     Layout.alignment: index % 2 === 0 ? Qt.AlignRight : Qt.AlignLeft
+                     text: index % 2 === 0
+-                        ? i18nc("@label %1 is a city or time zone name", "%1:", tzLabel)
++                        ? i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@label %1 is a city or time zone name", "%1:", tzLabel)
+                         : formatTime(tzClock.dateTime, Plasmoid.configuration.showSeconds > 0) + formatOffset(tzClock.dateTime)
+                     Clock {
+                         id: tzClock
+@@ -175,7 +175,7 @@
+         PlasmaComponents.Label {
+             Layout.maximumWidth: toolTipContentItem.maximumTextWidth
+             visible: ApplicationIntegration.calendarInstalled
+-            text: i18nc("@info:tooltip %1 is the name of a calendar application", "Middle-click to open %1", ApplicationIntegration.calendarApplicationName)
++            text: i18ndc("plasma_applet_org.kde.plasma.digitalclock", "@info:tooltip %1 is the name of a calendar application", "Middle-click to open %1", ApplicationIntegration.calendarApplicationName)
+             textFormat: Text.PlainText
+             opacity: 0.75
+             wrapMode: Text.Wrap
+diff -ruN a/metadata.json b/metadata.json
+--- a/metadata.json
++++ b/metadata.json
+@@ -2,113 +2,17 @@
+     "KPlugin": {
+         "Authors": [
+             {
+-                "Email": "mklapetek@kde.org",
+                 "Name": "Martin Klapetek",
+-                "Name[ar]": "مارتن كلابيتيك",
+-                "Name[az]": "Martin Klapetek",
+-                "Name[be]": "Martin Klapetek",
+-                "Name[bg]": "Martin Klapetek",
+-                "Name[ca@valencia]": "Martin Klapetek",
+-                "Name[ca]": "Martin Klapetek",
+-                "Name[cs]": "Martin Klapetek",
+-                "Name[da]": "Martin Klapetek",
+-                "Name[de]": "Martin Klapetek",
+-                "Name[el]": "Martin Klapetek",
+-                "Name[en_GB]": "Martin Klapetek",
+-                "Name[eo]": "Martin Klapetek",
+-                "Name[es]": "Martin Klapetek",
+-                "Name[et]": "Martin Klapetek",
+-                "Name[eu]": "Martin Klapetek",
+-                "Name[fi]": "Martin Klapetek",
+-                "Name[fr]": "Martin Klapetek",
+-                "Name[ga]": "Martin Klapetek",
+-                "Name[gl]": "Martin Klapetek",
+-                "Name[he]": "מרטין קלפיטק",
+-                "Name[hi]": "मार्टिन क्लैपेटेक",
+-                "Name[hu]": "Martin Klapetek",
+-                "Name[ia]": "Martin Klapetek",
+-                "Name[id]": "Martin Klapetek",
+-                "Name[is]": "Martin Klapetek",
+-                "Name[it]": "Martin Klapetek",
+-                "Name[ja]": "Martin Klapetek",
+-                "Name[ka]": "Martin Klapetek",
+-                "Name[ko]": "Martin Klapetek",
+-                "Name[lt]": "Martin Klapetek",
+-                "Name[lv]": "Martin Klapetek",
+-                "Name[nb]": "Martin Klapetek",
+-                "Name[nl]": "Martin Klapetek",
+-                "Name[nn]": "Martin Klapetek",
+-                "Name[pl]": "Martin Klapetek",
+-                "Name[pt]": "Martin Klapetek",
+-                "Name[pt_BR]": "Martin Klapetek",
+-                "Name[ro]": "Martin Klapetek",
+-                "Name[ru]": "Martin Klapetek",
+-                "Name[sa]": "मार्टिन् क्लापेटेक्",
+-                "Name[sk]": "Martin Klapetek",
+-                "Name[sl]": "Martin Klapetek",
+-                "Name[sv]": "Martin Klapetek",
+-                "Name[ta]": "மார்ட்டின் கிலேப்பெட்டெக்",
+-                "Name[tr]": "Martin Klapetek",
+-                "Name[ug]": "Martin Klapetek",
+-                "Name[uk]": "Martin Klapetek",
+-                "Name[vi]": "Martin Klapetek",
+-                "Name[zh_CN]": "Martin Klapetek",
+-                "Name[zh_TW]": "Martin Klapetek"
++                "Email": "mklapetek@kde.org"
++            },
++            {
++                "Name": "lckt0",
++                "Email": "lckt0@protonmail.com"
+             }
+         ],
+         "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=plasmashell&component=Digital%20Clock%20widget",
+         "Category": "Date and Time",
+-        "Description": "Time displayed in a digital format",
+-        "Description[ar]": "الوقت بتنسيق رقميّ",
+-        "Description[az]": "Saat, rəqəmsal formatda göstərilir",
+-        "Description[be]": "Час у лічбавым фармаце",
+-        "Description[bg]": "Представяне на часа в цифров формат",
+-        "Description[ca@valencia]": "Mostra l'hora en un format digital",
+-        "Description[ca]": "Mostra l'hora en un format digital",
+-        "Description[cs]": "Čas zobrazený v digitální podobě",
+-        "Description[da]": "Tiden vist i et digitalt format",
+-        "Description[de]": "Die Uhrzeit in digitaler Form anzeigen",
+-        "Description[el]": "Εμφάνιση της ώρας σε ψηφιακή μορφή",
+-        "Description[en_GB]": "Time displayed in a digital format",
+-        "Description[eo]": "Tempo montrita en cifereca formato",
+-        "Description[es]": "La hora mostrada en formato digital",
+-        "Description[et]": "Aja esitamine digitaalsel kujul",
+-        "Description[eu]": "Ordua formatu digitalean azaldua",
+-        "Description[fi]": "Digitaalimuodossa esitetty aika",
+-        "Description[fr]": "Affichage de l'heure au format numérique",
+-        "Description[gl]": "A hora amosada nun formato dixital.",
+-        "Description[he]": "השעה מוצגת באופן דיגיטלי",
+-        "Description[hi]": "डिजिटल प्रारूप में प्रदर्शित समय",
+-        "Description[hu]": "Digitális formában kijelzett idő",
+-        "Description[ia]": "Tempore monstrate in formato digital",
+-        "Description[id]": "Waktu ditampilkan dalam format digital",
+-        "Description[is]": "Klukkan sýnd á stafrænu formi",
+-        "Description[it]": "Ora visualizzata in un formato digitale",
+-        "Description[ja]": "時間をデジタル形式で表示します",
+-        "Description[ka]": "დროის ციფრული ფორმატი",
+-        "Description[ko]": "디지털 형식으로 시간 표시",
+-        "Description[lt]": "Laikas rodomas skaitmeniniu formatu",
+-        "Description[lv]": "Digitālā formātā parādīts laiks",
+-        "Description[nb]": "Klokkeslett vist i digitalt format",
+-        "Description[nl]": "Tijd weergegeven in een digitale opmaak",
+-        "Description[nn]": "Klokka vist i digitalformat",
+-        "Description[pa]": "ਡਿਜਿਟਲ ਫਾਰਮੈਟ ਵਿੱਚ ਸਮਾਂ ਵੇਖੋ",
+-        "Description[pl]": "Wyświetla czas w formacie cyfrowym",
+-        "Description[pt]": "A hora apresentada num formato digital",
+-        "Description[pt_BR]": "Hora exibida em formato digital",
+-        "Description[ro]": "Ora afișată în format digital",
+-        "Description[ru]": "Показ времени цифрами",
+-        "Description[sa]": "अङ्कीयस्वरूपेण प्रदर्शितः समयः",
+-        "Description[sk]": "Čas zobrazený v digitálnom formáte",
+-        "Description[sl]": "Prikaz časa v digitalni obliki",
+-        "Description[sv]": "Tid visad med digitalformat",
+-        "Description[ta]": "எண் வடிவில் நேரத்தைக் காட்டும்",
+-        "Description[tr]": "Sayısal biçimde gösterilen saat",
+-        "Description[ug]": "ۋاقىتنى رەقەم پىچىمىدا كۆرسىتىدۇ",
+-        "Description[uk]": "Час, показаний у цифровому форматі",
+-        "Description[vi]": "Thời gian hiển thị ở dạng số",
+-        "Description[zh_CN]": "用数字格式显示时间的小程序",
+-        "Description[zh_TW]": "以數位格式顯示時間",
++        "Description": "Plasma's Digital Clock; 12-hour time always says AM/PM, whatever the locale (local fork of org.kde.plasma.digitalclock, plasma-workspace 6.7.5)",
+         "FormFactors": [
+             "tablet",
+             "handset",
+@@ -116,101 +20,18 @@
+         ],
+         "Icon": "preferences-system-time",
+         "License": "GPL-2.0+",
+-        "Name": "Digital Clock",
+-        "Name[af]": "Digitale horlosie",
+-        "Name[ar]": "ساعة رقمية",
+-        "Name[ast]": "Reló dixital",
+-        "Name[az]": "Rəqəmsal saat",
+-        "Name[be@latin]": "Ličbavy hadzińnik",
+-        "Name[be]": "Лічбавы гадзіннік",
+-        "Name[bg]": "Цифров часовник",
+-        "Name[bn]": "ডিজিটাল ঘড়ি",
+-        "Name[bn_IN]": "ডিজিট্যাল ঘড়ি",
+-        "Name[bs]": "Digitalni sat",
+-        "Name[ca@valencia]": "Rellotge digital",
+-        "Name[ca]": "Rellotge digital",
+-        "Name[cs]": "Digitální hodiny",
+-        "Name[csb]": "Cyfrowi zédżer",
+-        "Name[da]": "Digitalt ur",
+-        "Name[de]": "Digitale Uhr",
+-        "Name[el]": "Ψηφιακό ρολόι",
+-        "Name[en_GB]": "Digital Clock",
+-        "Name[eo]": "Cifereca horloĝo",
+-        "Name[es]": "Reloj digital",
+-        "Name[et]": "Digikell",
+-        "Name[eu]": "Erloju digitala",
+-        "Name[fi]": "Digitaalinen kello",
+-        "Name[fr]": "Horloge numérique",
+-        "Name[fy]": "Digitale klok",
+-        "Name[ga]": "Clog Digiteach",
+-        "Name[gl]": "Reloxo dixital",
+-        "Name[gu]": "ડિજીટલ ઘડિયાળ",
+-        "Name[he]": "שעון דיגיטלי",
+-        "Name[hi]": "डिजिटल घड़ी",
+-        "Name[hne]": "डिजिटल घड़ी",
+-        "Name[hr]": "Digitalni sat",
+-        "Name[hsb]": "Digitalny časnik",
+-        "Name[hu]": "Digitális óra",
+-        "Name[ia]": "Horologio digital",
+-        "Name[id]": "Jam Digital",
+-        "Name[is]": "Stafræn klukka",
+-        "Name[it]": "Orologio digitale",
+-        "Name[ja]": "デジタル時計",
+-        "Name[ka]": "ციფრული საათი",
+-        "Name[kk]": "Цифрлық сағат",
+-        "Name[km]": "នាឡិកា​ឌីជីថល",
+-        "Name[kn]": "ಅಂಕೀಯ (ಡಿಜಿಟಲ್) ಗಡಿಯಾರ",
+-        "Name[ko]": "디지털 시계",
+-        "Name[ku]": "Demjimêra Dîjîtal",
+-        "Name[lt]": "Skaitmeninis laikrodis",
+-        "Name[lv]": "Digitālais pulkstenis",
+-        "Name[mai]": "डिजिटल घडी",
+-        "Name[mk]": "Дигитален часовник",
+-        "Name[ml]": "ഡിജിറ്റല്‍ ഘടികാരം",
+-        "Name[mr]": "डिजिटल घड्याळ",
+-        "Name[nb]": "Digital klokke",
+-        "Name[nds]": "Digitaal Klock",
+-        "Name[ne]": "डिजिटल घडी",
+-        "Name[nl]": "Digitale klok",
+-        "Name[nn]": "Digital klokke",
+-        "Name[oc]": "Relòtge numeric",
+-        "Name[or]": "ସାଂଖିକ ଘଡ଼ି",
+-        "Name[pa]": "ਡਿਜਿਟਲ ਘੜੀ",
+-        "Name[pl]": "Zegar cyfrowy",
+-        "Name[pt]": "Relógio Digital",
+-        "Name[pt_BR]": "Relógio digital",
+-        "Name[ro]": "Ceas digital",
+-        "Name[ru]": "Цифровые часы",
+-        "Name[sa]": "अङ्कीयघटिका",
+-        "Name[se]": "Digitálalaš diibmu",
+-        "Name[si]": "අංකිත ඔරලෝසුව",
+-        "Name[sk]": "Digitálne hodiny",
+-        "Name[sl]": "Digitalna ura",
+-        "Name[sr@ijekavian]": "дигитални сат",
+-        "Name[sr@ijekavianlatin]": "digitalni sat",
+-        "Name[sr@latin]": "digitalni sat",
+-        "Name[sr]": "дигитални сат",
+-        "Name[sv]": "Digitalklocka",
+-        "Name[ta]": "எண்ணுரு கடிகாரம்",
+-        "Name[te]": "డిజిటల్ గడియారం",
+-        "Name[tg]": "Соати рақамӣ",
+-        "Name[th]": "นาฬิกาดิจิทัล",
+-        "Name[tok]": "ilo nanpa tenpo",
+-        "Name[tr]": "Sayısal Saat",
+-        "Name[ug]": "رەقەملىك سائەت",
+-        "Name[uk]": "Цифровий годинник",
+-        "Name[uz@cyrillic]": "Рақамли соат",
+-        "Name[uz]": "Raqamli soat",
+-        "Name[vi]": "Đồng hồ số",
+-        "Name[wa]": "Ôrlodje didjitåle",
+-        "Name[zh_CN]": "数字时钟",
+-        "Name[zh_TW]": "數位時鐘",
+-        "Website": "https://kde.org/plasma-desktop"
++        "Name": "Iris Digital Clock",
++        "Website": "https://kde.org/plasma-desktop",
++        "Id": "io.github.lckt0.irisclock",
++        "Name[tr]": "Iris Dijital Saat",
++        "Description[tr]": "Plasma'nın Dijital Saat'i; 12 saat biçiminde yerel ayardan bağımsız AM/PM yazar (org.kde.plasma.digitalclock yerel çatalı, plasma-workspace 6.7.5)",
++        "Version": "6.7.5-iris1"
+     },
+     "X-KDE-ParentApp": "org.kde.plasmashell",
+     "X-Plasma-API-Minimum-Version": "6.0",
+     "X-Plasma-Provides": [
+         "org.kde.plasma.time",
+         "org.kde.plasma.date"
+-    ]
++    ],
++    "KPackageStructure": "Plasma/Applet"
+ }

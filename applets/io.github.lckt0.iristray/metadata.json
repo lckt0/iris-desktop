@@ -1,0 +1,23 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "lckt0@protonmail.com",
+                "Name": "lckt0"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "Windows-style system tray — compact icons with an overflow chevron",
+        "Description[tr]": "Windows tarzı sistem tepsisi — küçük ikonlar ve taşma oku",
+        "EnabledByDefault": true,
+        "Icon": "preferences-system-windows-actions",
+        "Id": "io.github.lckt0.iristray",
+        "License": "GPL-3.0-or-later",
+        "Name": "Iris Tray",
+        "Name[tr]": "Iris Tepsi",
+        "Version": "1.0.0",
+        "Website": "https://github.com/lckt0/iris-desktop"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

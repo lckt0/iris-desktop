@@ -1,0 +1,37 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Martin Klapetek",
+                "Email": "mklapetek@kde.org"
+            },
+            {
+                "Name": "lckt0",
+                "Email": "lckt0@protonmail.com"
+            }
+        ],
+        "BugReportUrl": "https://github.com/lckt0/iris-desktop/issues",
+        "Category": "Date and Time",
+        "Description": "Plasma's Digital Clock; 12-hour time always says AM/PM, whatever the locale (local fork of org.kde.plasma.digitalclock, plasma-workspace 6.7.5)",
+        "FormFactors": [
+            "tablet",
+            "handset",
+            "desktop"
+        ],
+        "Icon": "preferences-system-time",
+        "License": "GPL-2.0+",
+        "Name": "Iris Digital Clock",
+        "Website": "https://kde.org/plasma-desktop",
+        "Id": "io.github.lckt0.irisclock",
+        "Name[tr]": "Iris Dijital Saat",
+        "Description[tr]": "Plasma'nın Dijital Saat'i; 12 saat biçiminde yerel ayardan bağımsız AM/PM yazar (org.kde.plasma.digitalclock yerel çatalı, plasma-workspace 6.7.5)",
+        "Version": "6.7.5-iris1"
+    },
+    "X-KDE-ParentApp": "org.kde.plasmashell",
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.time",
+        "org.kde.plasma.date"
+    ],
+    "KPackageStructure": "Plasma/Applet"
+}

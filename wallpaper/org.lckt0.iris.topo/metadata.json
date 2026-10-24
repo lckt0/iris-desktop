@@ -1,0 +1,17 @@
+{
+    "KPackageStructure": "Plasma/Wallpaper/Images",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "lckt0@protonmail.com",
+                "Name": "lckt0"
+            }
+        ],
+        "Description": "Pitch black topographic contours — Iris theme wallpaper",
+        "Id": "org.lckt0.iris.topo",
+        "License": "GPL-3.0",
+        "Name": "Iris Topo",
+        "Version": "1.0.0",
+        "Website": "https://github.com/lckt0/iris-desktop"
+    }
+}

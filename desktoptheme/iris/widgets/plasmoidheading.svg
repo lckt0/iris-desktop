@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="110" viewBox="0 0 60 110">
+
+<g id="header-topleft">
+<rect x="10" y="10" width="6" height="6" fill="none"/>
+</g>
+<g id="header-topright">
+<rect x="44" y="10" width="6" height="6" fill="none"/>
+</g>
+<g id="header-bottomleft">
+<rect x="10" y="44" width="6" height="6" fill="none"/>
+<path d="M 10,44 L 16,44 L 16,50 L 12,50 A 2,2 0 0 1 10,48 Z M 12,44 L 16,44 L 16,48 L 12,48 Z" fill-rule="evenodd" fill="#545454"/>
+</g>
+<g id="header-bottomright">
+<rect x="44" y="44" width="6" height="6" fill="none"/>
+<path d="M 50,44 L 50,48 A 2,2 0 0 1 48,50 L 44,50 L 44,44 Z M 44,44 L 48,44 L 48,48 L 44,48 Z" fill-rule="evenodd" fill="#545454"/>
+</g>
+<g id="header-top">
+<rect x="16" y="10" width="28" height="6" fill="none"/>
+</g>
+<g id="header-bottom">
+<rect x="16" y="44" width="28" height="6" fill="none"/>
+<rect x="16" y="48" width="28" height="2" fill="#545454"/>
+</g>
+<g id="header-left">
+<rect x="10" y="16" width="6" height="28" fill="none"/>
+</g>
+<g id="header-right">
+<rect x="44" y="16" width="6" height="28" fill="none"/>
+</g>
+<g id="header-center"><rect x="16" y="16" width="28" height="28" fill="none"/></g>
+<rect id="header-hint-top-margin" x="10" y="10" width="1" height="4" fill="none"/>
+<rect id="header-hint-right-margin" x="10" y="10" width="6" height="1" fill="none"/>
+<rect id="header-hint-bottom-margin" x="10" y="10" width="1" height="4" fill="none"/>
+<rect id="header-hint-left-margin" x="10" y="10" width="6" height="1" fill="none"/>
+<g id="footer-topleft">
+<rect x="10" y="60" width="6" height="6" fill="none"/>
+<path d="M 10,66 L 10,62 A 2,2 0 0 1 12,60 L 16,60 L 16,66 Z M 12,62 L 16,62 L 16,66 L 12,66 Z" fill-rule="evenodd" fill="#545454"/>
+</g>
+<g id="footer-topright">
+<rect x="44" y="60" width="6" height="6" fill="none"/>
+<path d="M 44,60 L 48,60 A 2,2 0 0 1 50,62 L 50,66 L 44,66 Z M 44,62 L 48,62 L 48,66 L 44,66 Z" fill-rule="evenodd" fill="#545454"/>
+</g>
+<g id="footer-bottomleft">
+<rect x="10" y="94" width="6" height="6" fill="none"/>
+</g>
+<g id="footer-bottomright">
+<rect x="44" y="94" width="6" height="6" fill="none"/>
+</g>
+<g id="footer-top">
+<rect x="16" y="60" width="28" height="6" fill="none"/>
+<rect x="16" y="60" width="28" height="2" fill="#545454"/>
+</g>
+<g id="footer-bottom">
+<rect x="16" y="94" width="28" height="6" fill="none"/>
+</g>
+<g id="footer-left">
+<rect x="10" y="66" width="6" height="28" fill="none"/>
+</g>
+<g id="footer-right">
+<rect x="44" y="66" width="6" height="28" fill="none"/>
+</g>
+<g id="footer-center"><rect x="16" y="66" width="28" height="28" fill="none"/></g>
+<rect id="footer-hint-top-margin" x="10" y="60" width="1" height="4" fill="none"/>
+<rect id="footer-hint-right-margin" x="10" y="60" width="6" height="1" fill="none"/>
+<rect id="footer-hint-bottom-margin" x="10" y="60" width="1" height="4" fill="none"/>
+<rect id="footer-hint-left-margin" x="10" y="60" width="6" height="1" fill="none"/>
+<rect id="hint-stretch-borders" x="0" y="0" width="1" height="1" fill="none"/>
+</svg>

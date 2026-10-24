@@ -1,0 +1,305 @@
+/* Iris — rofi theme
+ *
+ * Single source of truth for the values below: docs/TOKENS.md
+ *   bg0 #000000  pitch black window ground
+ *   bg1 #0A0A0A  raised surface
+ *   bg2 #141414  hover surface
+ *   bg3 #242424  selected surface
+ *   line  #262626  1px default border
+ *   line2 #3D3D3D  strong border / scrollbar handle
+ *   fg0 #FFFFFF  primary text + accent
+ *   fg1 #B4B4B4  secondary text
+ *   fg2 #6E6E6E  disabled / placeholder
+ *
+ * Geometry: radius 2px everywhere, border 1px, item padding 8px/4px.
+ * Accent is white; color is used only where it carries meaning
+ * (neg/neu/pos are reserved for urgent/active rows).
+ *
+ * Sizes are logical pixels — rofi scales them by the output's fractional
+ * scale (1.5 here), so do not pre-multiply.
+ *
+ * Rofi has no `hover` state for list rows (the man page's `cursor` property
+ * only sets the mouse pointer shape). To get the #141414 hover surface,
+ * set `hover-select: true` in config.rasi: hovering then moves the
+ * selection, which paints the row with the selected surface instead.
+ */
+
+* {
+    bg0:   #000000;
+    bg1:   #0A0A0A;
+    bg2:   #141414;
+    bg3:   #242424;
+    line:  #262626;
+    line2: #3D3D3D;
+    fg0:   #FFFFFF;
+    fg1:   #B4B4B4;
+    fg2:   #6E6E6E;
+    neg:   #FF5555;
+    neu:   #F5B43C;
+    pos:   #50D68C;
+
+    radius: 2px;
+
+    background-color: transparent;
+    text-color:       @fg0;
+    font:             "JetBrains Mono 11";
+}
+
+/* ------------------------------------------------------------------ window */
+
+window {
+    transparency:     "real";
+    location:         center;
+    anchor:           center;
+    width:            620px;
+    padding:          0px;
+    background-color: @bg0;
+    border:           1px;
+    border-color:     @line;
+    border-radius:    @radius;
+    cursor:           "default";
+    children:         [ mainbox ];
+}
+
+mainbox {
+    padding:  0px;
+    spacing:  0px;
+    border:   0px;
+    children: [ inputbar, message, listview, mode-switcher ];
+}
+
+/* --------------------------------------------------------------- inputbar */
+/* One row: prompt chip on the left, entry beside it.
+   The 1px bottom border is the divider between search box and list. */
+
+inputbar {
+    /* 8px gutter — the same inset listview uses, so the prompt chip's left
+       edge lines up with the left edge of every row box below it. */
+    padding:          8px;
+    spacing:          8px;
+    border:           0px 0px 1px 0px;
+    border-color:     @line;
+    background-color: @bg0;
+    text-color:       @fg0;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    enabled:          true;
+    expand:           false;
+    padding:          2px 6px;
+    background-color: @bg2;
+    border:           0px;
+    border-radius:    @radius;
+    text-color:       @fg1;
+    vertical-align:   0.5;
+    cursor:           "default";
+}
+
+entry {
+    expand:            true;
+    padding:           2px 0px;
+    background-color:  transparent;
+    text-color:        @fg0;
+    placeholder:       "Search";
+    placeholder-color: @fg2;
+    vertical-align:    0.5;
+    cursor:            text;
+}
+
+/* Never shown (kept out of inputbar children) but defined so no mode can
+   fall back to an unstyled default. */
+textbox-prompt-colon {
+    enabled:    false;
+    expand:     false;
+    str:        "";
+    text-color: @fg2;
+}
+
+num-filtered-rows {
+    expand:     false;
+    text-color: @fg2;
+}
+
+num-rows {
+    expand:     false;
+    text-color: @fg2;
+}
+
+textbox-num-sep {
+    expand:     false;
+    str:        "/";
+    text-color: @fg2;
+}
+
+case-indicator {
+    spacing:    0px;
+    text-color: @fg2;
+}
+
+overlay {
+    padding:          2px 6px;
+    margin:           0px 4px;
+    background-color: @bg3;
+    border-radius:    @radius;
+    text-color:       @fg0;
+}
+
+/* --------------------------------------------------------------- listview */
+
+listview {
+    padding:      6px 8px;
+    spacing:      0px;
+    border:       0px;
+    lines:        9;
+    columns:      1;
+    fixed-height: false;
+    dynamic:      true;
+    cycle:        true;
+    scrollbar:    true;
+    reverse:      false;
+    cursor:       "default";
+}
+
+/* rofi 2.0 has no "hide when everything fits" option — `scrollbar` is a plain
+   boolean and the handle length it computes for very short lists is wrong
+   (a 5-item list still draws a ~half-height handle). Kept enabled because the
+   drun list is hundreds of entries long, where the handle is correct and
+   useful; at 2px/#3D3D3D a spurious handle reads as a hairline. */
+scrollbar {
+    width:                  2px;
+    padding:                0px;
+    margin:                 0px 0px 0px 4px;
+    handle-width:           2px;
+    handle-color:           @line2;
+    handle-rounded-corners: true;
+    background-color:       transparent;
+    border:                 0px;
+}
+
+/* Rows carry a transparent 2px left border at all times, so the text never
+   shifts sideways when the white accent bar appears on selection. */
+element {
+    padding:       4px 8px;
+    spacing:       8px;
+    border:        0px 0px 0px 2px;
+    border-color:  transparent;
+    border-radius: @radius;
+    cursor:        pointer;
+}
+
+element normal.normal    { background-color: transparent; text-color: @fg0; }
+element alternate.normal { background-color: transparent; text-color: @fg0; }
+element normal.active    { background-color: transparent; text-color: @fg1; }
+element alternate.active { background-color: transparent; text-color: @fg1; }
+element normal.urgent    { background-color: transparent; text-color: @neg; }
+element alternate.urgent { background-color: transparent; text-color: @neg; }
+
+element selected.normal  { background-color: @bg3; border-color: @fg0; text-color: @fg0; }
+element selected.active  { background-color: @bg3; border-color: @fg0; text-color: @fg0; }
+element selected.urgent  { background-color: @bg3; border-color: @neg; text-color: @neg; }
+
+element-icon {
+    size:             20px;
+    padding:          0px;
+    background-color: transparent;
+    text-color:       inherit;
+    cursor:           inherit;
+    vertical-align:   0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    /* `highlight` refuses variable references (rofi 2.0) — literal only.
+       Row text is already fg0 #FFFFFF, so weight carries the match cue. */
+    highlight:        bold #FFFFFF;
+    cursor:           inherit;
+    vertical-align:   0.5;
+}
+
+/* -------------------------------------------------------- message / error */
+/* `message` is the -mesg / "no match" strip above the list;
+   `error-message` is the standalone `rofi -e "..."` window. */
+
+message {
+    enabled:          true;
+    padding:          8px;
+    border:           0px 0px 1px 0px;
+    border-color:     @line;
+    background-color: @bg1;
+    text-color:       @fg1;
+}
+
+message textbox {
+    padding:          0px;
+    background-color: transparent;
+    text-color:       @fg1;
+    vertical-align:   0.5;
+}
+
+error-message {
+    padding:          12px;
+    border:           0px;
+    border-radius:    @radius;
+    background-color: @bg0;
+    text-color:       @fg0;
+}
+
+error-message textbox {
+    padding:          0px;
+    background-color: transparent;
+    text-color:       @fg0;
+    horizontal-align: 0.0;
+}
+
+textbox {
+    padding:          0px;
+    background-color: transparent;
+    text-color:       @fg1;
+    vertical-align:   0.5;
+}
+
+/* --------------------------------------------------------- mode switcher */
+/* Off by default: rofi 2.0 still draws the tab strip when only one mode is
+   configured, which is pure chrome for a drun-only setup. Modes are switched
+   with Ctrl+Tab. Flip `enabled` to true if more modes are ever added — the
+   styling below is already in place. */
+
+mode-switcher {
+    enabled:      false;
+    spacing:      0px;
+    padding:      0px;
+    border:       1px 0px 0px 0px;
+    border-color: @line;
+}
+
+button {
+    padding:          6px 8px;
+    spacing:          0px;
+    border:           0px 0px 2px 0px;
+    border-color:     transparent;
+    background-color: transparent;
+    text-color:       @fg2;
+    cursor:           pointer;
+}
+
+button selected {
+    background-color: @bg2;
+    border-color:     @fg0;
+    text-color:       @fg0;
+}
+
+/* ------------------------------------------------------------------ misc */
+
+sidebar {
+    border:       1px 0px 0px 0px;
+    border-color: @line;
+}
+
+element-overlay {
+    background-color: @bg3;
+    text-color:       @fg0;
+    border-radius:    @radius;
+    padding:          0px 4px;
+}

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="410" viewBox="0 0 60 410">
+
+<g id="north-active-tab-topleft">
+<rect x="10" y="10" width="6" height="6" fill="none"/>
+<path d="M 10,16 L 10,12 A 2,2 0 0 1 12,10 L 16,10 L 16,16 Z" fill="#141414"/>
+</g>
+<g id="north-active-tab-topright">
+<rect x="44" y="10" width="6" height="6" fill="none"/>
+<path d="M 44,10 L 48,10 A 2,2 0 0 1 50,12 L 50,16 L 44,16 Z" fill="#141414"/>
+</g>
+<g id="north-active-tab-bottomleft">
+<rect x="10" y="44" width="6" height="6" fill="none"/>
+<path d="M 10,44 L 16,44 L 16,50 L 12,50 A 2,2 0 0 1 10,48 Z" fill="#141414"/>
+</g>
+<g id="north-active-tab-bottomright">
+<rect x="44" y="44" width="6" height="6" fill="none"/>
+<path d="M 50,44 L 50,48 A 2,2 0 0 1 48,50 L 44,50 L 44,44 Z" fill="#141414"/>
+</g>
+<g id="north-active-tab-top">
+<rect x="16" y="10" width="28" height="6" fill="none"/>
+<rect x="16" y="10" width="28" height="6" fill="#141414"/>
+</g>
+<g id="north-active-tab-bottom">
+<rect x="16" y="44" width="28" height="6" fill="none"/>
+<rect x="16" y="44" width="28" height="6" fill="#141414"/>
+</g>
+<g id="north-active-tab-left">
+<rect x="10" y="16" width="6" height="28" fill="none"/>
+<rect x="10" y="16" width="6" height="28" fill="#141414"/>
+</g>
+<g id="north-active-tab-right">
+<rect x="44" y="16" width="6" height="28" fill="none"/>
+<rect x="44" y="16" width="6" height="28" fill="#141414"/>
+</g>
+<g id="north-active-tab-center"><rect x="16" y="16" width="28" height="28" fill="#141414"/></g>
+<rect id="north-active-tab-hint-top-margin" x="10" y="10" width="1" height="2" fill="none"/>
+<rect id="north-active-tab-hint-right-margin" x="10" y="10" width="8" height="1" fill="none"/>
+<rect id="north-active-tab-hint-bottom-margin" x="10" y="10" width="1" height="2" fill="none"/>
+<rect id="north-active-tab-hint-left-margin" x="10" y="10" width="8" height="1" fill="none"/>
+<g id="north-inactive-tab-topleft">
+<rect x="10" y="60" width="6" height="6" fill="none"/>
+</g>
+<g id="north-inactive-tab-topright">
+<rect x="44" y="60" width="6" height="6" fill="none"/>
+</g>
+<g id="north-inactive-tab-bottomleft">
+<rect x="10" y="94" width="6" height="6" fill="none"/>
+</g>
+<g id="north-inactive-tab-bottomright">
+<rect x="44" y="94" width="6" height="6" fill="none"/>
+</g>
+<g id="north-inactive-tab-top">
+<rect x="16" y="60" width="28" height="6" fill="none"/>
+</g>
+<g id="north-inactive-tab-bottom">
+<rect x="16" y="94" width="28" height="6" fill="none"/>
+</g>
+<g id="north-inactive-tab-left">
+<rect x="10" y="66" width="6" height="28" fill="none"/>
+</g>
+<g id="north-inactive-tab-right">
+<rect x="44" y="66" width="6" height="28" fill="none"/>
+</g>
+<g id="north-inactive-tab-center"><rect x="16" y="66" width="28" height="28" fill="none"/></g>
+<rect id="north-inactive-tab-hint-top-margin" x="10" y="60" width="1" height="2" fill="none"/>
+<rect id="north-inactive-tab-hint-right-margin" x="10" y="60" width="8" height="1" fill="none"/>
+<rect id="north-inactive-tab-hint-bottom-margin" x="10" y="60" width="1" height="2" fill="none"/>
+<rect id="north-inactive-tab-hint-left-margin" x="10" y="60" width="8" height="1" fill="none"/>
+<g id="south-active-tab-topleft">
+<rect x="10" y="110" width="6" height="6" fill="none"/>
+<path d="M 10,116 L 10,112 A 2,2 0 0 1 12,110 L 16,110 L 16,116 Z" fill="#141414"/>
+</g>
+<g id="south-active-tab-topright">
+<rect x="44" y="110" width="6" height="6" fill="none"/>
+<path d="M 44,110 L 48,110 A 2,2 0 0 1 50,112 L 50,116 L 44,116 Z" fill="#141414"/>
+</g>
+<g id="south-active-tab-bottomleft">
+<rect x="10" y="144" width="6" height="6" fill="none"/>
+<path d="M 10,144 L 16,144 L 16,150 L 12,150 A 2,2 0 0 1 10,148 Z" fill="#141414"/>
+</g>
+<g id="south-active-tab-bottomright">
+<rect x="44" y="144" width="6" height="6" fill="none"/>
+<path d="M 50,144 L 50,148 A 2,2 0 0 1 48,150 L 44,150 L 44,144 Z" fill="#141414"/>
+</g>
+<g id="south-active-tab-top">
+<rect x="16" y="110" width="28" height="6" fill="none"/>
+<rect x="16" y="110" width="28" height="6" fill="#141414"/>
+</g>
+<g id="south-active-tab-bottom">
+<rect x="16" y="144" width="28" height="6" fill="none"/>
+<rect x="16" y="144" width="28" height="6" fill="#141414"/>
+</g>
+<g id="south-active-tab-left">
+<rect x="10" y="116" width="6" height="28" fill="none"/>
+<rect x="10" y="116" width="6" height="28" fill="#141414"/>
+</g>
+<g id="south-active-tab-right">
+<rect x="44" y="116" width="6" height="28" fill="none"/>
+<rect x="44" y="116" width="6" height="28" fill="#141414"/>
+</g>
+<g id="south-active-tab-center"><rect x="16" y="116" width="28" height="28" fill="#141414"/></g>
+<rect id="south-active-tab-hint-top-margin" x="10" y="110" width="1" height="2" fill="none"/>
+<rect id="south-active-tab-hint-right-margin" x="10" y="110" width="8" height="1" fill="none"/>
+<rect id="south-active-tab-hint-bottom-margin" x="10" y="110" width="1" height="2" fill="none"/>
+<rect id="south-active-tab-hint-left-margin" x="10" y="110" width="8" height="1" fill="none"/>
+<g id="south-inactive-tab-topleft">
+<rect x="10" y="160" width="6" height="6" fill="none"/>
+</g>
+<g id="south-inactive-tab-topright">
+<rect x="44" y="160" width="6" height="6" fill="none"/>
+</g>
+<g id="south-inactive-tab-bottomleft">
+<rect x="10" y="194" width="6" height="6" fill="none"/>
+</g>
+<g id="south-inactive-tab-bottomright">
+<rect x="44" y="194" width="6" height="6" fill="none"/>
+</g>
+<g id="south-inactive-tab-top">
+<rect x="16" y="160" width="28" height="6" fill="none"/>
+</g>
+<g id="south-inactive-tab-bottom">
+<rect x="16" y="194" width="28" height="6" fill="none"/>
+</g>
+<g id="south-inactive-tab-left">
+<rect x="10" y="166" width="6" height="28" fill="none"/>
+</g>
+<g id="south-inactive-tab-right">
+<rect x="44" y="166" width="6" height="28" fill="none"/>
+</g>
+<g id="south-inactive-tab-center"><rect x="16" y="166" width="28" height="28" fill="none"/></g>
+<rect id="south-inactive-tab-hint-top-margin" x="10" y="160" width="1" height="2" fill="none"/>
+<rect id="south-inactive-tab-hint-right-margin" x="10" y="160" width="8" height="1" fill="none"/>
+<rect id="south-inactive-tab-hint-bottom-margin" x="10" y="160" width="1" height="2" fill="none"/>
+<rect id="south-inactive-tab-hint-left-margin" x="10" y="160" width="8" height="1" fill="none"/>
+<g id="west-active-tab-topleft">
+<rect x="10" y="210" width="6" height="6" fill="none"/>
+<path d="M 10,216 L 10,212 A 2,2 0 0 1 12,210 L 16,210 L 16,216 Z" fill="#141414"/>
+</g>
+<g id="west-active-tab-topright">
+<rect x="44" y="210" width="6" height="6" fill="none"/>
+<path d="M 44,210 L 48,210 A 2,2 0 0 1 50,212 L 50,216 L 44,216 Z" fill="#141414"/>
+</g>
+<g id="west-active-tab-bottomleft">
+<rect x="10" y="244" width="6" height="6" fill="none"/>
+<path d="M 10,244 L 16,244 L 16,250 L 12,250 A 2,2 0 0 1 10,248 Z" fill="#141414"/>
+</g>
+<g id="west-active-tab-bottomright">
+<rect x="44" y="244" width="6" height="6" fill="none"/>
+<path d="M 50,244 L 50,248 A 2,2 0 0 1 48,250 L 44,250 L 44,244 Z" fill="#141414"/>
+</g>
+<g id="west-active-tab-top">
+<rect x="16" y="210" width="28" height="6" fill="none"/>
+<rect x="16" y="210" width="28" height="6" fill="#141414"/>
+</g>
+<g id="west-active-tab-bottom">
+<rect x="16" y="244" width="28" height="6" fill="none"/>
+<rect x="16" y="244" width="28" height="6" fill="#141414"/>
+</g>
+<g id="west-active-tab-left">
+<rect x="10" y="216" width="6" height="28" fill="none"/>
+<rect x="10" y="216" width="6" height="28" fill="#141414"/>
+</g>
+<g id="west-active-tab-right">
+<rect x="44" y="216" width="6" height="28" fill="none"/>
+<rect x="44" y="216" width="6" height="28" fill="#141414"/>
+</g>
+<g id="west-active-tab-center"><rect x="16" y="216" width="28" height="28" fill="#141414"/></g>
+<rect id="west-active-tab-hint-top-margin" x="10" y="210" width="1" height="2" fill="none"/>
+<rect id="west-active-tab-hint-right-margin" x="10" y="210" width="8" height="1" fill="none"/>
+<rect id="west-active-tab-hint-bottom-margin" x="10" y="210" width="1" height="2" fill="none"/>
+<rect id="west-active-tab-hint-left-margin" x="10" y="210" width="8" height="1" fill="none"/>
+<g id="west-inactive-tab-topleft">
+<rect x="10" y="260" width="6" height="6" fill="none"/>
+</g>
+<g id="west-inactive-tab-topright">
+<rect x="44" y="260" width="6" height="6" fill="none"/>
+</g>
+<g id="west-inactive-tab-bottomleft">
+<rect x="10" y="294" width="6" height="6" fill="none"/>
+</g>
+<g id="west-inactive-tab-bottomright">
+<rect x="44" y="294" width="6" height="6" fill="none"/>
+</g>
+<g id="west-inactive-tab-top">
+<rect x="16" y="260" width="28" height="6" fill="none"/>
+</g>
+<g id="west-inactive-tab-bottom">
+<rect x="16" y="294" width="28" height="6" fill="none"/>
+</g>
+<g id="west-inactive-tab-left">
+<rect x="10" y="266" width="6" height="28" fill="none"/>
+</g>
+<g id="west-inactive-tab-right">
+<rect x="44" y="266" width="6" height="28" fill="none"/>
+</g>
+<g id="west-inactive-tab-center"><rect x="16" y="266" width="28" height="28" fill="none"/></g>
+<rect id="west-inactive-tab-hint-top-margin" x="10" y="260" width="1" height="2" fill="none"/>
+<rect id="west-inactive-tab-hint-right-margin" x="10" y="260" width="8" height="1" fill="none"/>
+<rect id="west-inactive-tab-hint-bottom-margin" x="10" y="260" width="1" height="2" fill="none"/>
+<rect id="west-inactive-tab-hint-left-margin" x="10" y="260" width="8" height="1" fill="none"/>
+<g id="east-active-tab-topleft">
+<rect x="10" y="310" width="6" height="6" fill="none"/>
+<path d="M 10,316 L 10,312 A 2,2 0 0 1 12,310 L 16,310 L 16,316 Z" fill="#141414"/>
+</g>
+<g id="east-active-tab-topright">
+<rect x="44" y="310" width="6" height="6" fill="none"/>
+<path d="M 44,310 L 48,310 A 2,2 0 0 1 50,312 L 50,316 L 44,316 Z" fill="#141414"/>
+</g>
+<g id="east-active-tab-bottomleft">
+<rect x="10" y="344" width="6" height="6" fill="none"/>
+<path d="M 10,344 L 16,344 L 16,350 L 12,350 A 2,2 0 0 1 10,348 Z" fill="#141414"/>
+</g>
+<g id="east-active-tab-bottomright">
+<rect x="44" y="344" width="6" height="6" fill="none"/>
+<path d="M 50,344 L 50,348 A 2,2 0 0 1 48,350 L 44,350 L 44,344 Z" fill="#141414"/>
+</g>
+<g id="east-active-tab-top">
+<rect x="16" y="310" width="28" height="6" fill="none"/>
+<rect x="16" y="310" width="28" height="6" fill="#141414"/>
+</g>
+<g id="east-active-tab-bottom">
+<rect x="16" y="344" width="28" height="6" fill="none"/>
+<rect x="16" y="344" width="28" height="6" fill="#141414"/>
+</g>
+<g id="east-active-tab-left">
+<rect x="10" y="316" width="6" height="28" fill="none"/>
+<rect x="10" y="316" width="6" height="28" fill="#141414"/>
+</g>
+<g id="east-active-tab-right">
+<rect x="44" y="316" width="6" height="28" fill="none"/>
+<rect x="44" y="316" width="6" height="28" fill="#141414"/>
+</g>
+<g id="east-active-tab-center"><rect x="16" y="316" width="28" height="28" fill="#141414"/></g>
+<rect id="east-active-tab-hint-top-margin" x="10" y="310" width="1" height="2" fill="none"/>
+<rect id="east-active-tab-hint-right-margin" x="10" y="310" width="8" height="1" fill="none"/>
+<rect id="east-active-tab-hint-bottom-margin" x="10" y="310" width="1" height="2" fill="none"/>
+<rect id="east-active-tab-hint-left-margin" x="10" y="310" width="8" height="1" fill="none"/>
+<g id="east-inactive-tab-topleft">
+<rect x="10" y="360" width="6" height="6" fill="none"/>
+</g>
+<g id="east-inactive-tab-topright">
+<rect x="44" y="360" width="6" height="6" fill="none"/>
+</g>
+<g id="east-inactive-tab-bottomleft">
+<rect x="10" y="394" width="6" height="6" fill="none"/>
+</g>
+<g id="east-inactive-tab-bottomright">
+<rect x="44" y="394" width="6" height="6" fill="none"/>
+</g>
+<g id="east-inactive-tab-top">
+<rect x="16" y="360" width="28" height="6" fill="none"/>
+</g>
+<g id="east-inactive-tab-bottom">
+<rect x="16" y="394" width="28" height="6" fill="none"/>
+</g>
+<g id="east-inactive-tab-left">
+<rect x="10" y="366" width="6" height="28" fill="none"/>
+</g>
+<g id="east-inactive-tab-right">
+<rect x="44" y="366" width="6" height="28" fill="none"/>
+</g>
+<g id="east-inactive-tab-center"><rect x="16" y="366" width="28" height="28" fill="none"/></g>
+<rect id="east-inactive-tab-hint-top-margin" x="10" y="360" width="1" height="2" fill="none"/>
+<rect id="east-inactive-tab-hint-right-margin" x="10" y="360" width="8" height="1" fill="none"/>
+<rect id="east-inactive-tab-hint-bottom-margin" x="10" y="360" width="1" height="2" fill="none"/>
+<rect id="east-inactive-tab-hint-left-margin" x="10" y="360" width="8" height="1" fill="none"/>
+<rect id="hint-stretch-borders" x="0" y="0" width="1" height="1" fill="none"/>
+</svg>

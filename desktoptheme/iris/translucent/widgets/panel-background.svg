@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+
+<g id="topleft">
+<rect x="10" y="10" width="6" height="6" fill="none"/>
+<path d="M 10,16 L 10,12 A 2,2 0 0 1 12,10 L 16,10 L 16,16 Z" fill="#000000"/>
+</g>
+<g id="topright">
+<rect x="44" y="10" width="6" height="6" fill="none"/>
+<path d="M 44,10 L 48,10 A 2,2 0 0 1 50,12 L 50,16 L 44,16 Z" fill="#000000"/>
+</g>
+<g id="bottomleft">
+<rect x="10" y="44" width="6" height="6" fill="none"/>
+<path d="M 10,44 L 16,44 L 16,50 L 12,50 A 2,2 0 0 1 10,48 Z" fill="#000000"/>
+</g>
+<g id="bottomright">
+<rect x="44" y="44" width="6" height="6" fill="none"/>
+<path d="M 50,44 L 50,48 A 2,2 0 0 1 48,50 L 44,50 L 44,44 Z" fill="#000000"/>
+</g>
+<g id="top">
+<rect x="16" y="10" width="28" height="6" fill="none"/>
+<rect x="16" y="10" width="28" height="6" fill="#000000"/>
+</g>
+<g id="bottom">
+<rect x="16" y="44" width="28" height="6" fill="none"/>
+<rect x="16" y="44" width="28" height="6" fill="#000000"/>
+</g>
+<g id="left">
+<rect x="10" y="16" width="6" height="28" fill="none"/>
+<rect x="10" y="16" width="6" height="28" fill="#000000"/>
+</g>
+<g id="right">
+<rect x="44" y="16" width="6" height="28" fill="none"/>
+<rect x="44" y="16" width="6" height="28" fill="#000000"/>
+</g>
+<g id="center"><rect x="16" y="16" width="28" height="28" fill="#000000"/></g>
+<rect id="hint-top-margin" x="10" y="10" width="1" height="1" fill="none"/>
+<rect id="hint-right-margin" x="10" y="10" width="1" height="1" fill="none"/>
+<rect id="hint-bottom-margin" x="10" y="10" width="1" height="1" fill="none"/>
+<rect id="hint-left-margin" x="10" y="10" width="1" height="1" fill="none"/>
+<rect id="hint-top-inset" x="10" y="10" width="1" height="0" fill="none"/>
+<rect id="hint-right-inset" x="10" y="10" width="0" height="1" fill="none"/>
+<rect id="hint-bottom-inset" x="10" y="10" width="1" height="0" fill="none"/>
+<rect id="hint-left-inset" x="10" y="10" width="0" height="1" fill="none"/>
+<rect id="hint-stretch-borders" x="0" y="0" width="1" height="1" fill="none"/>
+</svg>

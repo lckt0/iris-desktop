@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="refreshSeconds" type="Int">
+      <label>Refresh interval (seconds)</label>
+      <default>60</default>
+      <min>10</min>
+      <max>3600</max>
+    </entry>
+    <entry name="fontPixelSize" type="Int">
+      <label>Font size (pixels)</label>
+      <default>12</default>
+      <min>6</min>
+      <max>48</max>
+    </entry>
+    <entry name="showLogo" type="Bool">
+      <label>Show the logo</label>
+      <default>true</default>
+    </entry>
+    <entry name="extraArguments" type="String">
+      <label>Extra fastfetch arguments</label>
+      <default></default>
+    </entry>
+  </group>
+</kcfg>

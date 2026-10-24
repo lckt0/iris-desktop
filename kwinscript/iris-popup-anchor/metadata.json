@@ -1,0 +1,23 @@
+{
+    "KPackageStructure": "KWin/Script",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "lckt0@protonmail.com",
+                "Name": "lckt0"
+            }
+        ],
+        "Description": "Panel applet popups open at a fixed spot",
+        "Description[tr]": "Panel applet popupları sabit konumda açılır",
+        "EnabledByDefault": false,
+        "Icon": "preferences-system-windows",
+        "Id": "iris-popup-anchor",
+        "License": "GPL-3.0-or-later",
+        "Name": "Iris Popup Anchor",
+        "Name[tr]": "Iris Popup Sabitleyici",
+        "Version": "1.0.0",
+        "Website": "https://github.com/lckt0/iris-desktop"
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js"
+}

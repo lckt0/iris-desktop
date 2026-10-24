@@ -1,0 +1,40 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Sebastian Kügler",
+                "Email": "sebas@kde.org"
+            },
+            {
+                "Name": "Kai Uwe Broulik",
+                "Email": "kde@privat.broulik.de"
+            },
+            {
+                "Name": "lckt0",
+                "Email": "lckt0@protonmail.com"
+            }
+        ],
+        "BugReportUrl": "https://github.com/lckt0/iris-desktop/issues",
+        "Category": "System Information",
+        "Description": "Plasma's Power & Battery widget with the charge percentage beside the icon (local fork of org.kde.plasma.battery, powerdevil 6.7.5)",
+        "EnabledByDefault": true,
+        "FormFactors": [
+            "desktop"
+        ],
+        "Icon": "battery-full",
+        "License": "GPL-2.0+",
+        "Name": "Iris Power & Battery",
+        "Website": "https://kde.org/plasma-desktop/",
+        "Id": "io.github.lckt0.irisbattery",
+        "Name[tr]": "Iris Güç ve Pil",
+        "Description[tr]": "Plasma'nın Güç ve Pil aleti; pil yüzdesi ikonun yanında (org.kde.plasma.battery yerel çatalı, powerdevil 6.7.5)",
+        "Version": "6.7.5-iris1"
+    },
+    "Keywords": "Power Management;Battery;System;Energy;",
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-DBusActivationService": "org.kde.Solid.PowerManagement",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.powermanagement"
+    ],
+    "KPackageStructure": "Plasma/Applet"
+}

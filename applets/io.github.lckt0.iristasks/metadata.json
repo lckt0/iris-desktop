@@ -1,0 +1,26 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "lckt0@protonmail.com",
+                "Name": "lckt0"
+            }
+        ],
+        "Category": "Windows and Tasks",
+        "Description": "Minimal taskbar showing open windows — icon with title, thin active indicator",
+        "Description[tr]": "Açık pencereleri gösteren minimal görev çubuğu — ikon ve başlık, ince etkin göstergesi",
+        "EnabledByDefault": true,
+        "Icon": "preferences-system-windows-effect-highlightwindow",
+        "Id": "io.github.lckt0.iristasks",
+        "License": "GPL-3.0-or-later",
+        "Name": "Iris Tasks",
+        "Name[tr]": "Iris Görevler",
+        "Version": "1.0.0",
+        "Website": "https://github.com/lckt0/iris-desktop"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.multitasking"
+    ]
+}

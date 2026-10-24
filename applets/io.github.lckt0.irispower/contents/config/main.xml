@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="windowSeconds" type="Int">
+      <label>Ortalama penceresi (saniye)</label>
+      <default>60</default>
+      <min>10</min>
+      <max>600</max>
+    </entry>
+    <entry name="sampleIntervalMs" type="Int">
+      <label>Sampling interval (ms)</label>
+      <default>2000</default>
+      <min>1000</min>
+      <max>10000</max>
+    </entry>
+    <entry name="wattageThreshold" type="Double">
+      <label>On battery, show values above this in red (W)</label>
+      <default>10.0</default>
+    </entry>
+    <entry name="fontBold" type="Bool">
+      <label>Bold text</label>
+      <default>true</default>
+    </entry>
+  </group>
+</kcfg>

@@ -1,0 +1,26 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "lckt0@protonmail.com",
+                "Name": "lckt0"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "fastfetch output drawn natively on the desktop, keys and values in aligned columns",
+        "Description[tr]": "fastfetch çıktısı masaüstünde yerel olarak çizilir; anahtarlar ve değerler hizalı sütunlarda",
+        "EnabledByDefault": true,
+        "FormFactors": [
+            "desktop"
+        ],
+        "Icon": "utilities-system-monitor",
+        "Id": "io.github.lckt0.irisfetch",
+        "License": "GPL-3.0-or-later",
+        "Name": "Iris Fetch",
+        "Name[tr]": "Iris Fetch",
+        "Version": "1.0.0",
+        "Website": "https://github.com/lckt0/iris-desktop"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

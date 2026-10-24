@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="160" viewBox="0 0 60 160">
+
+<g id="plain-topleft">
+<rect x="10" y="10" width="6" height="6" fill="none"/>
+<path d="M 10,16 L 10,12 A 2,2 0 0 1 12,10 L 16,10 L 16,16 Z M 12,12 L 16,12 L 16,16 L 12,16 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 12,12 L 16,12 L 16,16 L 12,16 Z" fill="#000000"/>
+</g>
+<g id="plain-topright">
+<rect x="44" y="10" width="6" height="6" fill="none"/>
+<path d="M 44,10 L 48,10 A 2,2 0 0 1 50,12 L 50,16 L 44,16 Z M 44,12 L 48,12 L 48,16 L 44,16 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 44,12 L 48,12 L 48,16 L 44,16 Z" fill="#000000"/>
+</g>
+<g id="plain-bottomleft">
+<rect x="10" y="44" width="6" height="6" fill="none"/>
+<path d="M 10,44 L 16,44 L 16,50 L 12,50 A 2,2 0 0 1 10,48 Z M 12,44 L 16,44 L 16,48 L 12,48 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 12,44 L 16,44 L 16,48 L 12,48 Z" fill="#000000"/>
+</g>
+<g id="plain-bottomright">
+<rect x="44" y="44" width="6" height="6" fill="none"/>
+<path d="M 50,44 L 50,48 A 2,2 0 0 1 48,50 L 44,50 L 44,44 Z M 44,44 L 48,44 L 48,48 L 44,48 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 44,44 L 48,44 L 48,48 L 44,48 Z" fill="#000000"/>
+</g>
+<g id="plain-top">
+<rect x="16" y="10" width="28" height="6" fill="none"/>
+<rect x="16" y="10" width="28" height="2" fill="#545454"/>
+<rect x="16" y="12" width="28" height="4" fill="#000000"/>
+</g>
+<g id="plain-bottom">
+<rect x="16" y="44" width="28" height="6" fill="none"/>
+<rect x="16" y="48" width="28" height="2" fill="#545454"/>
+<rect x="16" y="44" width="28" height="4" fill="#000000"/>
+</g>
+<g id="plain-left">
+<rect x="10" y="16" width="6" height="28" fill="none"/>
+<rect x="10" y="16" width="2" height="28" fill="#545454"/>
+<rect x="12" y="16" width="4" height="28" fill="#000000"/>
+</g>
+<g id="plain-right">
+<rect x="44" y="16" width="6" height="28" fill="none"/>
+<rect x="48" y="16" width="2" height="28" fill="#545454"/>
+<rect x="44" y="16" width="4" height="28" fill="#000000"/>
+</g>
+<g id="plain-center"><rect x="16" y="16" width="28" height="28" fill="#000000"/></g>
+<rect id="plain-hint-top-margin" x="10" y="10" width="1" height="1" fill="none"/>
+<rect id="plain-hint-right-margin" x="10" y="10" width="1" height="1" fill="none"/>
+<rect id="plain-hint-bottom-margin" x="10" y="10" width="1" height="1" fill="none"/>
+<rect id="plain-hint-left-margin" x="10" y="10" width="1" height="1" fill="none"/>
+<g id="raised-topleft">
+<rect x="10" y="60" width="6" height="6" fill="none"/>
+<path d="M 10,66 L 10,62 A 2,2 0 0 1 12,60 L 16,60 L 16,66 Z M 12,62 L 16,62 L 16,66 L 12,66 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 12,62 L 16,62 L 16,66 L 12,66 Z" fill="#0a0a0a"/>
+</g>
+<g id="raised-topright">
+<rect x="44" y="60" width="6" height="6" fill="none"/>
+<path d="M 44,60 L 48,60 A 2,2 0 0 1 50,62 L 50,66 L 44,66 Z M 44,62 L 48,62 L 48,66 L 44,66 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 44,62 L 48,62 L 48,66 L 44,66 Z" fill="#0a0a0a"/>
+</g>
+<g id="raised-bottomleft">
+<rect x="10" y="94" width="6" height="6" fill="none"/>
+<path d="M 10,94 L 16,94 L 16,100 L 12,100 A 2,2 0 0 1 10,98 Z M 12,94 L 16,94 L 16,98 L 12,98 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 12,94 L 16,94 L 16,98 L 12,98 Z" fill="#0a0a0a"/>
+</g>
+<g id="raised-bottomright">
+<rect x="44" y="94" width="6" height="6" fill="none"/>
+<path d="M 50,94 L 50,98 A 2,2 0 0 1 48,100 L 44,100 L 44,94 Z M 44,94 L 48,94 L 48,98 L 44,98 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 44,94 L 48,94 L 48,98 L 44,98 Z" fill="#0a0a0a"/>
+</g>
+<g id="raised-top">
+<rect x="16" y="60" width="28" height="6" fill="none"/>
+<rect x="16" y="60" width="28" height="2" fill="#545454"/>
+<rect x="16" y="62" width="28" height="4" fill="#0a0a0a"/>
+</g>
+<g id="raised-bottom">
+<rect x="16" y="94" width="28" height="6" fill="none"/>
+<rect x="16" y="98" width="28" height="2" fill="#545454"/>
+<rect x="16" y="94" width="28" height="4" fill="#0a0a0a"/>
+</g>
+<g id="raised-left">
+<rect x="10" y="66" width="6" height="28" fill="none"/>
+<rect x="10" y="66" width="2" height="28" fill="#545454"/>
+<rect x="12" y="66" width="4" height="28" fill="#0a0a0a"/>
+</g>
+<g id="raised-right">
+<rect x="44" y="66" width="6" height="28" fill="none"/>
+<rect x="48" y="66" width="2" height="28" fill="#545454"/>
+<rect x="44" y="66" width="4" height="28" fill="#0a0a0a"/>
+</g>
+<g id="raised-center"><rect x="16" y="66" width="28" height="28" fill="#0a0a0a"/></g>
+<rect id="raised-hint-top-margin" x="10" y="60" width="1" height="1" fill="none"/>
+<rect id="raised-hint-right-margin" x="10" y="60" width="1" height="1" fill="none"/>
+<rect id="raised-hint-bottom-margin" x="10" y="60" width="1" height="1" fill="none"/>
+<rect id="raised-hint-left-margin" x="10" y="60" width="1" height="1" fill="none"/>
+<g id="sunken-topleft">
+<rect x="10" y="110" width="6" height="6" fill="none"/>
+<path d="M 10,116 L 10,112 A 2,2 0 0 1 12,110 L 16,110 L 16,116 Z M 12,112 L 16,112 L 16,116 L 12,116 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 12,112 L 16,112 L 16,116 L 12,116 Z" fill="#000000"/>
+</g>
+<g id="sunken-topright">
+<rect x="44" y="110" width="6" height="6" fill="none"/>
+<path d="M 44,110 L 48,110 A 2,2 0 0 1 50,112 L 50,116 L 44,116 Z M 44,112 L 48,112 L 48,116 L 44,116 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 44,112 L 48,112 L 48,116 L 44,116 Z" fill="#000000"/>
+</g>
+<g id="sunken-bottomleft">
+<rect x="10" y="144" width="6" height="6" fill="none"/>
+<path d="M 10,144 L 16,144 L 16,150 L 12,150 A 2,2 0 0 1 10,148 Z M 12,144 L 16,144 L 16,148 L 12,148 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 12,144 L 16,144 L 16,148 L 12,148 Z" fill="#000000"/>
+</g>
+<g id="sunken-bottomright">
+<rect x="44" y="144" width="6" height="6" fill="none"/>
+<path d="M 50,144 L 50,148 A 2,2 0 0 1 48,150 L 44,150 L 44,144 Z M 44,144 L 48,144 L 48,148 L 44,148 Z" fill-rule="evenodd" fill="#545454"/>
+<path d="M 44,144 L 48,144 L 48,148 L 44,148 Z" fill="#000000"/>
+</g>
+<g id="sunken-top">
+<rect x="16" y="110" width="28" height="6" fill="none"/>
+<rect x="16" y="110" width="28" height="2" fill="#545454"/>
+<rect x="16" y="112" width="28" height="4" fill="#000000"/>
+</g>
+<g id="sunken-bottom">
+<rect x="16" y="144" width="28" height="6" fill="none"/>
+<rect x="16" y="148" width="28" height="2" fill="#545454"/>
+<rect x="16" y="144" width="28" height="4" fill="#000000"/>
+</g>
+<g id="sunken-left">
+<rect x="10" y="116" width="6" height="28" fill="none"/>
+<rect x="10" y="116" width="2" height="28" fill="#545454"/>
+<rect x="12" y="116" width="4" height="28" fill="#000000"/>
+</g>
+<g id="sunken-right">
+<rect x="44" y="116" width="6" height="28" fill="none"/>
+<rect x="48" y="116" width="2" height="28" fill="#545454"/>
+<rect x="44" y="116" width="4" height="28" fill="#000000"/>
+</g>
+<g id="sunken-center"><rect x="16" y="116" width="28" height="28" fill="#000000"/></g>
+<rect id="sunken-hint-top-margin" x="10" y="110" width="1" height="1" fill="none"/>
+<rect id="sunken-hint-right-margin" x="10" y="110" width="1" height="1" fill="none"/>
+<rect id="sunken-hint-bottom-margin" x="10" y="110" width="1" height="1" fill="none"/>
+<rect id="sunken-hint-left-margin" x="10" y="110" width="1" height="1" fill="none"/>
+<rect id="hint-stretch-borders" x="0" y="0" width="1" height="1" fill="none"/>
+</svg>

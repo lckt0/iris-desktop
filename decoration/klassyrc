@@ -1,0 +1,113 @@
+# Iris — Klassy configuration
+# Window decoration + Qt application style.
+# 2px radius, 2px #545454 window outline, full-height Windows-like buttons.
+#
+# Group names come from Klassy's own schemas; do not rename them:
+#   /usr/share/config.kcfg/klassy.kcfg             -> [Style]
+#   /usr/share/config.kcfg/klassy-decoration.kcfg  -> all other groups
+# Klassy silently ignores keys written to the wrong group.
+
+[Global]
+LookAndFeelSet=org.lckt0.iris
+
+# ============================================================ uygulama stili
+[Style]
+AnimationsEnabled=true
+AnimationsDuration=120
+AnimationSteps=10
+DockWidgetDrawFrame=false
+FrameCornerRadius=FCR_Custom
+FrameCustomCornerRadius=2
+MenuItemDrawStrongFocus=true
+MenuOpacity=100
+ProgressBarAnimated=true
+ScrollBarAddLineButtons=0
+ScrollBarSubLineButtons=0
+ScrollBarMinSliderHeight=24
+ScrollBarSeparator=false
+ScrollBarSliderThicknessMouseOver=8
+ScrollBarSliderThicknessMouseNotOverPercent=50
+SidePanelDrawFrame=false
+SliderDrawTickMarks=false
+SplitterProxyEnabled=true
+StackedWidgetTransitionsEnabled=true
+TabBarDrawCenteredTabs=false
+ToolBarDrawItemSeparator=false
+ViewDrawFocusIndicator=true
+ViewDrawTreeBranchLines=false
+WindowDragMode=WD_MINIMAL
+
+# ========================================================== dekorasyon geneli
+[Windeco]
+AnimationsEnabled=true
+AnimationsSpeedRelativeSystem=0
+BoldButtonIcons=BoldIconsFine
+BoldTitle=false
+ButtonIconStyle=StyleFluent
+ButtonShape=ShapeFullHeightRectangle
+ColorizeWindowOutlineWithButton=false
+DrawBackgroundGradient=false
+DrawBorderOnMaximizedWindows=false
+DrawTitleBarSeparator=false
+IconSize=IconSmall
+MatchTitleBarToApplicationColor=true
+RoundAllCornersWhenNoBorders=true
+UnderlineTitle=false
+UseTitleBarColorForAllBorders=true
+WindowCornerRadius=2
+
+# ================================================================== butonlar
+[ButtonSizing]
+ButtonCornerRadius=Custom
+ButtonCustomCornerRadius=2
+ButtonSpacingLeft=4
+ButtonSpacingRight=4
+FullHeightButtonWidthMarginLeft=8
+FullHeightButtonWidthMarginRight=8
+
+[ButtonColors]
+ButtonIconColorsActive=TitleBarText
+ButtonIconColorsInactive=TitleBarText
+NegativeCloseBackgroundHoverPressActive=true
+NegativeCloseBackgroundHoverPressInactive=true
+
+[ButtonBehaviour]
+ShowBackgroundNormallyActive=false
+ShowBackgroundNormallyInactive=false
+ShowBackgroundOnHoverActive=true
+ShowBackgroundOnHoverInactive=true
+ShowBackgroundOnPressActive=true
+ShowBackgroundOnPressInactive=true
+ShowIconNormallyActive=true
+ShowIconNormallyInactive=true
+ShowOutlineNormallyActive=false
+ShowOutlineNormallyInactive=false
+
+# ================================================================== title bar
+[TitleBarSpacing]
+PercentMaximizedTopBottomMargins=60
+TitleAlignment=AlignLeft
+TitleBarBottomMargin=7
+TitleBarLeftMargin=4
+TitleBarRightMargin=4
+TitleBarTopMargin=7
+TitleSidePadding=8
+
+[TitleBarOpacity]
+OpaqueMaximizedTitleBars=true
+
+# ============================================================= window outline
+# Same grey (#545454) as the desktop theme, popups and menus.
+# Active window fully opaque, inactive the same colour but fainter.
+[WindowOutlineStyle]
+LockWindowOutlineCustomColorActiveInactive=true
+LockWindowOutlineStyleActiveInactive=true
+WindowOutlineStyleActive=WindowOutlineCustomColor
+WindowOutlineStyleInactive=WindowOutlineCustomColor
+WindowOutlineCustomColorActive=84,84,84
+WindowOutlineCustomColorInactive=84,84,84
+WindowOutlineCustomColorOpacityActive=100
+WindowOutlineCustomColorOpacityInactive=55
+WindowOutlineThickness=2
+WindowOutlineSnapToWholePixel=true
+WindowOutlineOverlap=true

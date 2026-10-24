@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="showPercentSign" type="Bool">
+      <label>Append a % sign</label>
+      <default>true</default>
+    </entry>
+    <entry name="fontBold" type="Bool">
+      <label>Bold text</label>
+      <default>true</default>
+    </entry>
+    <entry name="colorizeStates" type="Bool">
+      <label>Colour charging / low / critical states</label>
+      <default>true</default>
+    </entry>
+    <entry name="lowThreshold" type="Int">
+      <label>Low battery threshold (%)</label>
+      <default>20</default>
+      <min>1</min>
+      <max>99</max>
+    </entry>
+    <entry name="criticalThreshold" type="Int">
+      <label>Critical battery threshold (%)</label>
+      <default>10</default>
+      <min>1</min>
+      <max>99</max>
+    </entry>
+  </group>
+</kcfg>

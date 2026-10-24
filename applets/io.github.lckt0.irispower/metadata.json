@@ -1,0 +1,23 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "lckt0@protonmail.com",
+                "Name": "lckt0"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "Battery power draw averaged over the last minute",
+        "Description[tr]": "Pilden çekilen gücün son 1 dakikalık ortalaması",
+        "EnabledByDefault": true,
+        "Icon": "battery-profile-powersave-symbolic",
+        "Id": "io.github.lckt0.irispower",
+        "License": "GPL-3.0-or-later",
+        "Name": "Iris Power",
+        "Name[tr]": "Iris Güç Sayacı",
+        "Version": "1.0.0",
+        "Website": "https://github.com/lckt0/iris-desktop"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

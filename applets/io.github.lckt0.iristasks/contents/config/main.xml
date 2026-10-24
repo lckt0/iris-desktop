@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+
+  <kcfgfile name=""/>
+
+  <group name="General">
+
+    <!-- appearance -->
+    <entry name="showLabels" type="Bool">
+      <label>Show window titles</label>
+      <default>true</default>
+    </entry>
+
+    <entry name="maxTaskWidth" type="Int">
+      <label>Maximum width of a task (px)</label>
+      <default>190</default>
+      <min>60</min>
+      <max>420</max>
+    </entry>
+
+    <entry name="minTaskWidth" type="Int">
+      <label>Task width when titles are hidden (px)</label>
+      <default>36</default>
+      <min>24</min>
+      <max>120</max>
+    </entry>
+
+    <entry name="iconSize" type="Int">
+      <label>Icon size (px, 0 = automatic)</label>
+      <default>0</default>
+      <min>0</min>
+      <max>64</max>
+    </entry>
+
+    <entry name="taskSpacing" type="Int">
+      <label>Spacing between tasks (px)</label>
+      <default>2</default>
+      <min>0</min>
+      <max>12</max>
+    </entry>
+
+    <entry name="indicatorEdge" type="Int">
+      <!-- 0 = screen edge side, 1 = inner side -->
+      <label>Active indicator position</label>
+      <default>0</default>
+    </entry>
+
+    <entry name="indicatorThickness" type="Int">
+      <label>Active indicator thickness (px)</label>
+      <default>2</default>
+      <min>1</min>
+      <max>6</max>
+    </entry>
+
+    <entry name="fillWidth" type="Bool">
+      <label>Fill the remaining panel space</label>
+      <default>true</default>
+    </entry>
+
+    <!-- behaviour -->
+    <entry name="showOnlyCurrentDesktop" type="Bool">
+      <label>Only the current virtual desktop</label>
+      <default>true</default>
+    </entry>
+
+    <entry name="showOnlyCurrentScreen" type="Bool">
+      <label>Only the current screen</label>
+      <default>false</default>
+    </entry>
+
+    <entry name="showOnlyCurrentActivity" type="Bool">
+      <label>Only the current activity</label>
+      <default>true</default>
+    </entry>
+
+    <entry name="groupingEnabled" type="Bool">
+      <label>Group windows of the same application</label>
+      <default>false</default>
+    </entry>
+
+    <entry name="middleClickAction" type="Int">
+      <!-- 0 = close window, 1 = new instance, 2 = nothing -->
+      <label>Middle-click action</label>
+      <default>0</default>
+    </entry>
+
+    <entry name="wheelCyclesTasks" type="Bool">
+      <label>Mouse wheel cycles through tasks</label>
+      <default>true</default>
+    </entry>
+
+    <entry name="animationsEnabled" type="Bool">
+      <label>Animasyonlar</label>
+      <default>true</default>
+    </entry>
+
+    <entry name="showTooltips" type="Bool">
+      <label>Tooltips</label>
+      <default>true</default>
+    </entry>
+
+  </group>
+</kcfg>

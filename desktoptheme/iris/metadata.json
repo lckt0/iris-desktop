@@ -1,0 +1,19 @@
+{
+    "KPackageStructure": "Plasma/Theme",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "lckt0@protonmail.com",
+                "Name": "lckt0"
+            }
+        ],
+        "Description": "Pitch black Plasma style — minimal, 1px borders, 2px radii",
+        "Description[tr]": "Saf siyah Plasma stili — sade, 1px kenarlık, 2px yarıçap",
+        "Id": "iris",
+        "License": "GPL-3.0",
+        "Name": "Iris",
+        "Version": "1.0.0",
+        "Website": "https://github.com/lckt0/iris-desktop"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
