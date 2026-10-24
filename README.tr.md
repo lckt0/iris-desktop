@@ -6,6 +6,8 @@ KDE Plasma 6 için tam siyah bir masaüstü teması: saf `#000000` zemin, ağır
 olarak siyah-beyaz, ince gri kenarlıklar ve her yerde 2px köşe yarıçapı. Renk
 yalnızca bir anlam taşıdığı yerde kullanılır (hata, uyarı, başarı, düşük pil).
 
+![Iris, gerçek masaüstünde](screenshots/desktop.png)
+
 ![Tema önizlemesi: panel, tepsi simgeleri ve Plasma bileşenleri](screenshots/preview.png)
 
 > **Başlamadan önce küçük bir not:** iris-desktop en başta kendi kullanımım için tasarlandı; başkalarının da işine yarayabilir diye paylaşıyorum. Kendi ihtiyaçlarım ve tercihlerim doğrultusunda şekillendiği için herkese hitap etmeyebilir. Öneri ve geri bildirimlerinizi memnuniyetle karşılarım.

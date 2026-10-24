@@ -6,6 +6,8 @@ A pitch-black desktop theme for KDE Plasma 6: pure `#000000` ground, mostly
 black and white, thin grey borders and a 2px radius everywhere. Colour is used
 only where it means something (errors, warnings, success, low battery).
 
+![Iris on a real desktop](screenshots/desktop.png)
+
 ![Theme preview: panel, tray icons and Plasma controls](screenshots/preview.png)
 
 > **A note before you start:** iris-desktop was originally built for my own setup and daily use, and later shared in case it helps someone else. It reflects my own hardware, tools and preferences, so it may not fit every system or workflow. Issues and suggestions are welcome, but please keep that in mind.
