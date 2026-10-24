@@ -75,7 +75,7 @@ and only animate opacity, scale and position. Nothing spins or pulses.
 On Arch Linux:
 
 ```sh
-sudo pacman -S --needed papirus-icon-theme ttf-jetbrains-mono fastfetch rofi
+sudo pacman -S --needed papirus-icon-theme ttf-jetbrains-mono ttf-jetbrains-mono-nerd fastfetch rofi
 yay -S klassy          # from the AUR, or use any AUR helper
 ```
 

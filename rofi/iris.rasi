@@ -42,7 +42,7 @@
 
     background-color: transparent;
     text-color:       @fg0;
-    font:             "JetBrains Mono 11";
+    font:             "JetBrainsMono Nerd Font 11";
 }
 
 /* ------------------------------------------------------------------ window */

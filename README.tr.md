@@ -76,7 +76,7 @@ atan bir öğe yoktur.
 Arch Linux'ta:
 
 ```sh
-sudo pacman -S --needed papirus-icon-theme ttf-jetbrains-mono fastfetch rofi
+sudo pacman -S --needed papirus-icon-theme ttf-jetbrains-mono ttf-jetbrains-mono-nerd fastfetch rofi
 yay -S klassy          # AUR'dan; başka bir AUR yardımcısı da olur
 ```
 
