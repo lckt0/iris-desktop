@@ -7,8 +7,8 @@
                 "Name": "lckt0"
             }
         ],
-        "Description": "Pitch black desktop — minimal, 1px borders, 2px radii",
-        "Description[tr]": "Saf siyah masaüstü — sade, 1px kenarlık, 2px yarıçap",
+        "Description": "Pitch black desktop — minimal, 2px borders and radii",
+        "Description[tr]": "Saf siyah masaüstü — sade, 2px kenarlık ve yarıçap",
         "Id": "org.lckt0.iris",
         "License": "GPL-3.0-or-later",
         "Name": "Iris",

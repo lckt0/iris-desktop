@@ -15,8 +15,9 @@ BG1 = "#0a0a0a"
 BG2 = "#141414"
 BG3 = "#242424"
 BG4 = "#303030"
-LINE = "#545454"   # kenarlik — bildirim basligindaki Kirigami ayraciyla ayni ton
-LINE2 = "#6b6b6b"  # guclu kenarlik (giris kutusu, odaklanabilir yuzey)
+LINE = "#545454"   # default border, same tone as the Kirigami separator
+LINE2 = "#6b6b6b"  # strong border (line edits, focusable surfaces)
+LINE_SOFT = "#262626"  # popup heading separator
 FG0 = "#ffffff"
 FG1 = "#b4b4b4"
 FG2 = "#6e6e6e"
@@ -313,9 +314,9 @@ write("widgets/toolbar.svg", multi([
 # The heading strip spans the popup's full width, so an opaque fill covered
 # the dialog border underneath it. The fill is the same tone as the popup
 # anyway, so leave it transparent and draw only the separator line; the
-# border then runs uninterrupted.
+# border then runs uninterrupted. The header separator is a softer grey.
 write("widgets/plasmoidheading.svg", multi([
-    ("header", None, LINE, (4, 6, 4, 6), ("b",)),
+    ("header", None, LINE_SOFT, (4, 6, 4, 6), ("b",)),
     ("footer", None, LINE, (4, 6, 4, 6), ("t",)),
 ]))
 

@@ -7,8 +7,8 @@
                 "Name": "lckt0"
             }
         ],
-        "Description": "Pitch black Plasma style — minimal, 1px borders, 2px radii",
-        "Description[tr]": "Saf siyah Plasma stili — sade, 1px kenarlık, 2px yarıçap",
+        "Description": "Pitch black Plasma style — minimal, 2px borders and radii",
+        "Description[tr]": "Saf siyah Plasma stili — sade, 2px kenarlık ve yarıçap",
         "Id": "iris",
         "License": "GPL-3.0",
         "Name": "Iris",

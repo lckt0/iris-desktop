@@ -5,6 +5,9 @@ AnimationDurationFactor=0.5
 [kdeglobals][General]
 ColorScheme=Iris
 
+[kdeglobals][Icons]
+Theme=Papirus
+
 [plasmarc][Theme]
 name=iris
 

@@ -14,6 +14,7 @@ decoration, wallpaper) uses these values.
 | `bg4`          | `#303030` | 48,48,48      | Active control fill (slider, switch) |
 | `line`         | `#545454` | 84,84,84      | Default 2px border. The Kirigami separator in notification headers uses the same tone. |
 | `line2`        | `#6b6b6b` | 107,107,107   | Strong border — line edits, focusable surfaces |
+| `line-soft`    | `#262626` | 38,38,38      | Separator under popup headings (`widgets/plasmoidheading.svg`) |
 | `fg0`          | `#FFFFFF` | 255,255,255   | Primary text, accent, focus ring |
 | `fg1`          | `#B4B4B4` | 180,180,180   | Secondary text |
 | `fg2`          | `#6E6E6E` | 110,110,110   | Inactive / disabled |

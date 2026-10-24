@@ -4,8 +4,8 @@
 #   bash install.sh              install everything and apply it
 #   bash install.sh --no-apply   only install the files, leave settings alone
 #   bash install.sh --files      same as --no-apply
-#   bash install.sh --icons      also select the Windows 11 style tray icon layer
-#                                (default: installed but not selected)
+#   bash install.sh --layout     also replace the panels and desktop widgets
+#                                with the Iris layout
 #
 # Safe to run more than once.
 set -euo pipefail
@@ -13,11 +13,11 @@ cd "$(dirname "$0")"
 REPO="$PWD"
 
 APPLY=1
-ICONS=0
+LAYOUT=0
 for a in "$@"; do
   case "$a" in
     --no-apply|--files) APPLY=0 ;;
-    --icons) ICONS=1 ;;
+    --layout) LAYOUT=1 ;;
     -h|--help) sed -n '2,8p' "$0"; exit 0 ;;
   esac
 done
@@ -31,16 +31,10 @@ mkdir -p ~/.local/share/color-schemes
 rm -f ~/.local/share/color-schemes/iris.colors
 install -m644 "$REPO/colors/iris.colors" ~/.local/share/color-schemes/Iris.colors
 
-say "Plasma stili"
+say "Plasma style"
 mkdir -p ~/.local/share/plasma/desktoptheme
 rm -rf ~/.local/share/plasma/desktoptheme/iris
 cp -a "$REPO/desktoptheme/iris" ~/.local/share/plasma/desktoptheme/iris
-
-say "icon layer (Windows 11 style tray icons over Papirus)"
-mkdir -p ~/.local/share/icons
-rm -rf ~/.local/share/icons/Iris
-cp -a "$REPO/icons/Iris" ~/.local/share/icons/Iris
-gtk-update-icon-cache -f -t ~/.local/share/icons/Iris >/dev/null 2>&1 || true
 
 say "wallpaper"
 mkdir -p ~/.local/share/wallpapers
@@ -54,8 +48,8 @@ cp -a "$REPO/look-and-feel/org.lckt0.iris" ~/.local/share/plasma/look-and-feel/
 
 say "applets"
 mkdir -p ~/.local/share/plasma/plasmoids
-for a in io.github.lckt0.iristasks io.github.lckt0.iristray io.github.lckt0.irisbatterylabel io.github.lckt0.panelcolorizer \
-         io.github.lckt0.irispower io.github.lckt0.irisbattery io.github.lckt0.irisclock io.github.lckt0.irisfetch; do
+for a in io.github.lckt0.iristasks io.github.lckt0.irisclock io.github.lckt0.irisbattery \
+         io.github.lckt0.irispower io.github.lckt0.irisfetch; do
   rm -rf ~/.local/share/plasma/plasmoids/"$a"
   cp -a "$REPO/applets/$a" ~/.local/share/plasma/plasmoids/
   echo "   $a"
@@ -83,11 +77,11 @@ kwriteconfig6 --file kdeglobals --group General --key ColorSchemeHash --delete 2
 # An accent colour would override the scheme's own selection grey.
 kwriteconfig6 --file kdeglobals --group General --key AccentColor --delete 2>/dev/null || true
 kwriteconfig6 --file kdeglobals --group General --key LastUsedCustomAccentColor --delete 2>/dev/null || true
-if [ "$ICONS" -eq 1 ]; then
-  kwriteconfig6 --file kdeglobals --group Icons --key Theme "Iris"
-  say "icon theme set to Iris"
+if [ -d /usr/share/icons/Papirus ] || [ -d ~/.local/share/icons/Papirus ]; then
+  kwriteconfig6 --file kdeglobals --group Icons --key Theme "Papirus"
+  say "icon theme set to Papirus"
 else
-  say "icon theme unchanged (use --icons to select Iris)"
+  warn "Papirus is not installed, icon theme unchanged"
 fi
 kwriteconfig6 --file kdeglobals --group KDE --key widgetStyle "Klassy"
 kwriteconfig6 --file kdeglobals --group KDE --key AnimationDurationFactor "0.5"
@@ -168,42 +162,11 @@ plasma-apply-wallpaperimage ~/.local/share/wallpapers/org.lckt0.iris.topo >/dev/
   || warn "could not apply the wallpaper"
 qdbus6 org.kde.KWin /KWin reconfigure >/dev/null 2>&1 || true
 
-say "restarting plasmashell"
-if systemctl --user is-enabled plasma-plasmashell.service >/dev/null 2>&1 \
-   || systemctl --user is-active plasma-plasmashell.service >/dev/null 2>&1; then
-  systemctl --user restart plasma-plasmashell.service
-else
-  kquitapp6 plasmashell >/dev/null 2>&1 || true
-  sleep 2
-  (setsid plasmashell >/dev/null 2>&1 &)
+if [ "$LAYOUT" -eq 1 ]; then
+  say "panel layout"
+  plasma-apply-lookandfeel --apply org.lckt0.iris --resetLayout >/dev/null 2>&1 \
+    || warn "could not apply the panel layout"
 fi
-
-# Battery percentage: turn off the stock applet's in-icon badge and put the
-# Iris label next to it. Done through plasmashell's scripting API because the
-# panel configuration is keyed by applet ids.
-say "battery percentage label"
-sleep 3
-qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '
-for (var i = 0; i < panelIds.length; i++) {
-  var p = panelById(panelIds[i]);
-  var ws = p.widgets();
-  var battery = null, label = null;
-  for (var j = 0; j < ws.length; j++) {
-    if (ws[j].type === "org.kde.plasma.battery") battery = ws[j];
-    if (ws[j].type === "io.github.lckt0.irisbatterylabel") label = ws[j];
-  }
-  if (!battery) continue;
-  battery.currentConfigGroup = ["General"];
-  battery.writeConfig("showPercentage", false);
-  battery.reloadConfig();
-  if (!label) label = p.addWidget("io.github.lckt0.irisbatterylabel");
-  p.currentConfigGroup = ["General"];
-  var order = String(p.readConfig("AppletOrder", "")).split(";")
-      .filter(function (s) { return s !== "" && s !== String(label.id); });
-  order.splice(order.indexOf(String(battery.id)) + 1, 0, String(label.id));
-  p.writeConfig("AppletOrder", order.join(";"));
-}
-' >/dev/null 2>&1 || warn "could not add the battery percentage label to the panel"
 
 cat <<'NOTE'
 
@@ -211,5 +174,6 @@ cat <<'NOTE'
 
    Window decoration settings (2px corners, grey outline, Fluent buttons)
    need KWin to reload the Klassy plugin and take effect at the next login.
-   Everything else is active now.
+   Widgets that were already on a panel load their new version at the next
+   login as well. Everything else is active now.
 NOTE

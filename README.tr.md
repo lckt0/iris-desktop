@@ -8,16 +8,15 @@ yalnızca bir anlam taşıdığı yerde kullanılır (hata, uyarı, başarı, d�
 
 ![Iris, gerçek masaüstünde](screenshots/desktop.png)
 
-![Tema önizlemesi: panel, tepsi simgeleri ve Plasma bileşenleri](screenshots/preview.png)
-
 > **Başlamadan önce küçük bir not:** iris-desktop en başta kendi kullanımım için tasarlandı; başkalarının da işine yarayabilir diye paylaşıyorum. Kendi ihtiyaçlarım ve tercihlerim doğrultusunda şekillendiği için herkese hitap etmeyebilir. Öneri ve geri bildirimlerinizi memnuniyetle karşılarım.
 
-Yukarıdaki görüntü, temanın kendi SVG'leri, renk şeması ve simgeleriyle örnek
-verilerle ekransız olarak çizildi; pencere başlıkları yer tutucudur.
+Ekran görüntüsünde Iris düzeni görünüyor: üstte 30px yüksekliğinde tek bir
+panel; solda sanal masaüstü göstergesi ve görevler, ortada saat, sağda
+uygulama tepsisi, ağ, Bluetooth, ses, pil, güç tüketimi ve bildirimler.
+Simgeler Papirus. Görüntüdeki duvar kağıdı kişisel; temayla gelen Iris Topo
+duvar kağıdı şöyle görünür:
 
-| Duvar kağıdı | Tepsi simgeleri |
-|---|---|
-| ![Duvar kağıdı](screenshots/wallpaper.png) | ![Tepsi simgeleri](screenshots/tray-icons.png) |
+![Iris Topo duvar kağıdı](screenshots/wallpaper.png)
 
 Bütün tasarım değerleri tek bir yerde: [`docs/TOKENS.md`](docs/TOKENS.md).
 
@@ -25,31 +24,39 @@ Bütün tasarım değerleri tek bir yerde: [`docs/TOKENS.md`](docs/TOKENS.md).
 
 | Parça | Yol | Ne yapar |
 |---|---|---|
-| Renk şeması | `colors/iris.colors` | Sistem geneli palet: saf siyah pencere ve görünüm zeminleri, gri seçim, beyaz odak halkası. |
+| Renk şeması | `colors/iris.colors` | Sistem geneli palet: saf siyah pencere ve görünüm zeminleri, gri seçim, beyaz odak halkası, gri etkin olmayan pencere başlıkları. |
 | Plasma stili | `desktoptheme/iris/` | Panel, açılır pencere, ipucu, düğme ve liste SVG'leri (9 dilimli, 2px yarıçap). `scripts/gen_desktoptheme.py` üretir. |
 | Pencere dekorasyonu | `decoration/klassyrc` | [Klassy](https://github.com/paulmcauley/klassy) yapılandırması: 2px köşeler, gri pencere kenarlığı, Fluent tarzı düğmeler. |
-| Simge katmanı *(isteğe bağlı)* | `icons/Iris/` | Papirus'tan miras alır; yalnızca pil, ses, ağ, Bluetooth ve bildirim simgelerini Windows 11 tarzı çizimlerle değiştirir. `scripts/gen_icons.py` üretir. |
 | Duvar kağıdı | `wallpaper/org.lckt0.iris.topo/` | 2880x1800 topografik eş yükselti çizgileri, neredeyse tamamı saf siyah. `scripts/gen_wallpaper.py` üretir. |
-| Genel tema | `look-and-feel/org.lckt0.iris/` | Hepsini bir araya getiren genel tema; siyah bir açılış ekranı içerir. |
+| Genel tema | `look-and-feel/org.lckt0.iris/` | Hepsini bir araya getiren genel tema: renkler, Plasma stili, Klassy, Papirus simgeleri, duvar kağıdı, siyah bir açılış ekranı ve panel düzeni. |
 | Rofi teması | `rofi/iris.rasi` | Rofi için aynı palet. |
-| KWin betiği *(isteğe bağlı)* | `kwinscript/iris-popup-anchor/` | Panel aletlerinin açılır pencerelerini sağ üst köşeye sabitler. |
+| KWin betiği | `kwinscript/iris-popup-anchor/` | Panel aletlerinin açılır pencerelerini sağ üst köşeye, panelin hemen altına sabitler. |
 
 Panel aletleri:
 
 | Alet | Kimlik | |
 |---|---|---|
 | Iris Tasks | `io.github.lckt0.iristasks` | Sade görev çubuğu: simge ve başlık, kayan etkin göstergesi, yer daraldıkça küçülen düğmeler. |
-| Iris Tray *(isteğe bağlı)* | `io.github.lckt0.iristray` | Ağ, ses, Bluetooth, pil ve bildirim göstergeleri tek sıkı bir kümede. |
-| Iris Battery Percent | `io.github.lckt0.irisbatterylabel` | Pil yüzdesini stok pil simgesinin yanına düz metin olarak yazar. |
-| Iris Power | `io.github.lckt0.irispower` | Pilden çekilen gücün son bir dakikalık ortalaması. |
-| Iris Fetch | `io.github.lckt0.irisfetch` | fastfetch çıktısını masaüstünde yerel olarak, anahtarlar ve değerler hizalı sütunlarda çizer. |
-| Iris Power & Battery | `io.github.lckt0.irisbattery` | Plasma'nın pil aletinin (powerdevil 6.7.5) çatalı; yüzde simgenin yanında. |
 | Iris Digital Clock | `io.github.lckt0.irisclock` | Plasma'nın dijital saatinin (plasma-workspace 6.7.5) çatalı; ÖÖ/ÖS yerine her zaman AM/PM yazar. |
-| Panel Colorizer (Iris) | `io.github.lckt0.panelcolorizer` | [Panel Colorizer](https://github.com/luisbocanegra/plasma-panel-colorizer) 8.0.0 çatalı; yüzen ve sabit panel için ayrı ayarlar. |
+| Iris Power & Battery | `io.github.lckt0.irisbattery` | Plasma'nın pil aletinin (powerdevil 6.7.5) çatalı; yüzde simgenin yanında. |
+| Iris Power | `io.github.lckt0.irispower` | Pilden çekilen gücün son bir dakikalık ortalaması. |
+| Iris Fetch | `io.github.lckt0.irisfetch` | Masaüstü aleti: fastfetch çıktısını yerel olarak, anahtarlar ve değerler hizalı sütunlarda çizer. |
 
 Çatallar kendi kimlikleriyle kurulur, böylece stok aletler çalışmaya devam
-eder. Üst projeye göre değişiklikleri [`patches/`](patches) dizininde (pil ve
-saat), Panel Colorizer kaynaklarında ise `Iris fork` işaretiyle belirtilmiştir.
+eder. Üst projeye göre değişiklikler [`patches/`](patches) dizinindedir.
+
+Panel düzeni başka projelerden gelen şu aletleri de kullanır. Hiçbiri kesin
+olarak gerekli değildir: biri eksikse düzen onun yerine Plasma'nın stok aletini
+koyar.
+
+| Alet | Kimlik | Kaynak | Yedek |
+|---|---|---|---|
+| Mike Desktop | `com.mike.desktop` | KDE Store (Yeni Araçlar Al → "Mike Desktop") | Sayfalayıcı |
+| Advanced Separator | `luisbocanegra.advanced_separator` | [plasma-advanced-separator](https://github.com/luisbocanegra/plasma-advanced-separator) | Kenar Boşluklu Ayırıcı |
+| Audio Volume (Multi-Output) | `io.github.lckt0.volume` | [iris-volume](https://github.com/lckt0/iris-volume) | Ses Düzeyi |
+
+Ağ, Bluetooth ve bildirimler Plasma'nın kendi aletleridir; sistem tepsisinin
+içinde değil, doğrudan panelde dururlar.
 
 Hareket: genel animasyon çarpanı 0.5'e ayarlanır, geçişler 90–150 ms sürer ve
 yalnızca opaklık, ölçek ve konum üzerinde çalışır. Sürekli dönen ya da nabız
@@ -61,16 +68,22 @@ atan bir öğe yoktur.
 
 - KDE Plasma 6 (Wayland ya da X11)
 - Pencere dekorasyonu ve uygulama stili için [Klassy](https://github.com/paulmcauley/klassy)
-- Papirus simge teması (Iris simge katmanı ondan miras alır)
+- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) simge teması
 - JetBrains Mono yazı tipi
-- İsteğe bağlı: rofi, fastfetch (Iris Fetch için)
+- İsteğe bağlı: fastfetch (Iris Fetch için), rofi ve yukarıda listelenen
+  üçüncü parti aletler
 
 Arch Linux'ta:
 
 ```sh
-sudo pacman -S --needed papirus-icon-theme ttf-jetbrains-mono rofi fastfetch
+sudo pacman -S --needed papirus-icon-theme ttf-jetbrains-mono fastfetch rofi
 yay -S klassy          # AUR'dan; başka bir AUR yardımcısı da olur
 ```
+
+Mike Desktop ve Advanced Separator, **panele sağ tık → Araç Ekle veya Yönet →
+Yeni Araçlar Al → Yeni Plasma Araçları İndir** yoluyla kurulabilir. Audio
+Volume (Multi-Output) için [iris-volume](https://github.com/lckt0/iris-volume)
+README'sine bakın.
 
 Temanın kendisi için bir Arch paketi yok; kurulum betiğini kullanın.
 
@@ -86,7 +99,7 @@ Seçenekler:
 
 ```sh
 bash install.sh --no-apply   # yalnızca dosyaları kopyalar, hiçbir ayarı değiştirmez
-bash install.sh --icons      # Iris simge katmanını da seçer
+bash install.sh --layout     # panellerinizi de Iris düzeniyle değiştirir
 ```
 
 Tam kurulum şu dosyaları kopyalar:
@@ -95,7 +108,6 @@ Tam kurulum şu dosyaları kopyalar:
 |---|---|
 | `colors/iris.colors` | `~/.local/share/color-schemes/Iris.colors` |
 | `desktoptheme/iris/` | `~/.local/share/plasma/desktoptheme/iris/` |
-| `icons/Iris/` | `~/.local/share/icons/Iris/` |
 | `wallpaper/org.lckt0.iris.topo/` | `~/.local/share/wallpapers/org.lckt0.iris.topo/` |
 | `look-and-feel/org.lckt0.iris/` | `~/.local/share/plasma/look-and-feel/org.lckt0.iris/` |
 | `applets/io.github.lckt0.*` | `~/.local/share/plasma/plasmoids/` |
@@ -104,7 +116,8 @@ Tam kurulum şu dosyaları kopyalar:
 
 `--no-apply` verilmediyse ardından:
 
-- Iris renk şemasını, Plasma stilini ve duvar kağıdını uygular;
+- Iris renk şemasını, Plasma stilini ve duvar kağıdını uygular; Papirus
+  kuruluysa simge teması olarak onu seçer;
 - Klassy'yi pencere dekorasyonu ve uygulama stili yapar, animasyon çarpanını
   0.5'e ayarlar, `kwinrc` içinde bulanıklık, kontrast, solma ve ölçek
   efektlerini açar (titreyen pencereler ve sihirli lamba kapalı);
@@ -113,25 +126,32 @@ Tam kurulum şu dosyaları kopyalar:
   değişmez (Plasma şemayı `kdeglobals`'a kopyalarken bu renkleri atıyor);
 - `dolphinrc`, `kdenliverc`, `konsolerc`, `katerc` ve `okularrc` içindeki
   Breeze renk şeması geçersiz kılmalarını siler;
-- GTK animasyonlarını açar ve `~/.config/rofi/config.rasi` varsa rofi temasını seçer;
-- plasmashell'i yeniden başlatır ve pil aleti bulunan her panelde Iris Battery
-  Percent'i stok pil aletinin yanına ekler.
+- GTK animasyonlarını açar ve `~/.config/rofi/config.rasi` varsa rofi temasını seçer.
 
-Pencere dekorasyonu değişiklikleri bir sonraki girişte etkin olur.
+`--layout` verilirse Iris genel temasını masaüstü düzeniyle birlikte de
+uygular (`plasma-apply-lookandfeel --apply org.lckt0.iris --resetLayout`). Bu
+**mevcut panellerinizi ve masaüstü aletlerinizi kaldırır**; yerine Iris
+panelini ve Iris Fetch masaüstü aletini kurar.
+
+Pencere dekorasyonu değişiklikleri ve panelde zaten bulunan aletlerin yeni
+sürümleri bir sonraki girişte etkin olur.
 
 ### Elle kurulum
 
 Yukarıdaki tablodaki dosyaları hedeflerine kopyalayın, ardından seçin:
 
-- **Sistem Ayarları → Renkler ve Temalar → Genel Tema → Iris**, ya da tek tek
-  **Renkler → Iris**, **Plasma Stili → Iris**, **Pencere Dekorasyonları → Klassy**,
-  **Uygulama Stili → Klassy** ve isteğe bağlı olarak **Simgeler → Iris**;
+- **Sistem Ayarları → Renkler ve Temalar → Genel Tema → Iris**. Iris panel
+  düzenini de istiyorsanız uygulama penceresinde "Masaüstü ve pencere düzeni"ni
+  işaretleyin. Ya da parçaları tek tek seçin: **Renkler → Iris**,
+  **Plasma Stili → Iris**, **Pencere Dekorasyonları → Klassy**,
+  **Uygulama Stili → Klassy**, **Simgeler → Papirus**;
 - duvar kağıdı: masaüstüne sağ tıklayın → **Masaüstünü ve Duvar Kağıdını Yapılandır** → **Iris Topo**.
 
 ### Aletler ve KWin betiği
 
-Aletleri panele sağ tıklayıp **Araç Ekle veya Yönet** ile ekleyin ve "Iris"
-(ya da "Panel Colorizer (Iris)") diye arayın.
+Iris düzenini kullanmıyorsanız aletleri panele sağ tıklayıp **Araç Ekle veya
+Yönet** ile ekleyin ve "Iris" diye arayın. Iris Fetch masaüstüne eklenir
+(masaüstüne sağ tık → **Araç Ekle veya Yönet**).
 
 KWin betiği `install.sh` ile kurulmaz:
 
@@ -154,20 +174,21 @@ Ardından **Sistem Ayarları → Pencere Yönetimi → KWin Betikleri** içinde
    dekorasyonunu ve uygulama stilini geri getirir. Bunun yerine **Sistem
    Ayarları → Renkler ve Temalar → Genel Tema** içinden **Breeze Koyu**'yu (ya
    da **Breeze**'i) seçebilir, isterseniz animasyon hızını **Genel Davranış**
-   altında sıfırlayabilirsiniz.
+   altında sıfırlayabilirsiniz. Varsayılan Breeze panelini de geri almak için
+   yukarıdaki komuta `--resetLayout` ekleyin (ya da "Masaüstü ve pencere
+   düzeni"ni işaretleyin).
 
-2. Iris aletlerini panellerinizden kaldırın (sağ tık → **Kaldır**) ve
-   etkinleştirdiyseniz **Iris Popup Anchor**'ı kapatın.
+2. Iris aletlerini panellerinizden ve masaüstünden kaldırın (sağ tık →
+   **Kaldır**) ve etkinleştirdiyseniz **Iris Popup Anchor**'ı kapatın.
 
 3. Kurulan dosyaları silin:
 
    ```sh
    rm -f  ~/.local/share/color-schemes/Iris.colors
    rm -rf ~/.local/share/plasma/desktoptheme/iris
-   rm -rf ~/.local/share/icons/Iris
    rm -rf ~/.local/share/wallpapers/org.lckt0.iris.topo
    rm -rf ~/.local/share/plasma/look-and-feel/org.lckt0.iris
-   rm -rf ~/.local/share/plasma/plasmoids/io.github.lckt0.{iristasks,iristray,irisbatterylabel,irispower,irisfetch,irisbattery,irisclock,panelcolorizer}
+   rm -rf ~/.local/share/plasma/plasmoids/io.github.lckt0.{iristasks,irisclock,irisbattery,irispower,irisfetch}
    rm -f  ~/.config/rofi/themes/iris.rasi
    kpackagetool6 --type KWin/Script --remove iris-popup-anchor   # yalnızca kurduysanız
    ```
@@ -180,6 +201,8 @@ Ardından **Sistem Ayarları → Pencere Yönetimi → KWin Betikleri** içinde
      **Sistem Ayarları → Pencere Yönetimi → Masaüstü Efektleri**'nden değiştirin.
    - **Sistem Ayarları → Pencere Yönetimi → Pencere Kuralları**'ndan
      **Iris title bar** kuralını silin.
+   - Simge teması Papirus olarak kalır; **Sistem Ayarları → Renkler ve
+     Temalar → Simgeler**'den değiştirin.
 
 ## Bilinen sınırlar
 
@@ -189,9 +212,6 @@ Ardından **Sistem Ayarları → Pencere Yönetimi → KWin Betikleri** içinde
   `/usr/share/config.kcfg/klassy.kcfg` dosyalarında listelenir.
 - **Klassy pencere kenarlığı yeni bir giriş ister.** `kwin reconfigure` onu
   yeni pencerelere uygulamaz.
-- **Uygulama tepsi simgeleri Plasma'nın kendi sistem tepsisinde kalır.** Iris
-  Tray yalnızca kendi göstergelerini çizer; StatusNotifierItem barındırmak bir
-  containment gerektirir.
 - **Sistem tepsisi açılır penceresi yalnızca simgeli bir ızgaraya
   dönüştürülemez.** Plasma 6.7'den beri QML'i eklentinin içine derlenmiştir.
 - Pil ve saat çatalları Plasma 6.7.5 tabanlıdır ve 6.8'de kullanılmaktadır;
@@ -199,12 +219,11 @@ Ardından **Sistem Ayarları → Pencere Yönetimi → KWin Betikleri** içinde
 
 ## Varlıkları yeniden üretmek
 
-Bütün SVG'ler, simgeler ve duvar kağıdı betiklerle üretilir; elle düzenlenmiş
+Plasma stili SVG'leri ve duvar kağıdı betiklerle üretilir; elle düzenlenmiş
 dosya yoktur:
 
 ```sh
 python3 scripts/gen_desktoptheme.py desktoptheme/iris
-python3 scripts/gen_icons.py icons/Iris
 python3 scripts/gen_wallpaper.py   # belirlenimci, varsayılan tohum 20260914
 ```
 
@@ -212,6 +231,5 @@ python3 scripts/gen_wallpaper.py   # belirlenimci, varsayılan tohum 20260914
 
 ## Lisans
 
-GPL-3.0-or-later, bkz. [LICENSE](LICENSE). Çatallanan aletler özgün
-lisanslarını ve telif başlıklarını korur: Panel Colorizer GPL-3.0, KDE'den
-gelen pil ve saat aletleri GPL-2.0-or-later lisanslıdır.
+GPL-3.0-or-later, bkz. [LICENSE](LICENSE). KDE'den çatallanan pil ve saat
+aletleri özgün GPL-2.0-or-later lisanslarını ve telif başlıklarını korur.
